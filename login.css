@@ -1,13 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-      font-family: Arial, sans-serif;
-      background-image: url('toko.jpg');
+      font-family: Poppins, sans-serif;
+      background-color: #f9fafb;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
-    }
+}
 
 .login-box {
+      background-color: #fff;
+      padding: 25px;
+      width: 320px;
+      margin: 80% auto;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
 
+.login-box h2{
+      color: #1e88e5;
+      margin-bottom: 10px;
+      text-align: center;
+}
+
+.login-box p{
+      color: #555;
+      font-size: 12px;
+      margin-bottom: 15px;
+      text-align: center;
+}
+
+.login-box label {
+  display: block;
+  text-align: left;
+  font-weight: 500;
+  color: #333;
+}
+
+.login-box input{
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #b0bec5;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.login-box input:focus{
+  border: 1.5px solid #1e88e5;
+  box-shadow: 0 0 6px rgba(30, 136, 229, 0.4), 0 0 12px rgba(255, 193, 7, 0.3);
+  outline: none;
+  background-color: #f9fbff;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffd700;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-box button:hover {
+  background-color: #ffc107;
+  box-shadow: 0 6px 12px rgba(255, 193, 7, 0.4);
+}
+
+.login-box button:active {
+  background-color: #e0a800;
+  transform: scale(0.90);
 }
