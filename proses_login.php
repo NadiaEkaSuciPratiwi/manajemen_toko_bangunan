@@ -13,6 +13,7 @@
         header("Location: dashboard.php");
         exit();
     } else{
-        echo "Username atau password salah!";
+        header("Location: login.php?error=1");
+        exit();
     }
 ?>

@@ -4,7 +4,8 @@
 
 body {
       font-family: Poppins, sans-serif;
-      background-color: #f9fafb;
+      background-image: url('toko.jpg');
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -80,4 +81,16 @@ body {
 .login-box button:active {
   background-color: #e0a800;
   transform: scale(0.90);
+}
+
+.error-box {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 13px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
 }
