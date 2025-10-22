@@ -17,9 +17,9 @@
         $_SESSION['username'] = $data['username'];
 
         header("Location: dashboard.php");
-        exit();
+        exit;
     } else{
         header("Location: login.php?error=1");
-        exit();
+        exit;
     }
 ?>
