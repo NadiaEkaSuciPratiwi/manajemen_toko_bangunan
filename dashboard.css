@@ -5,19 +5,24 @@ body {
 }
 
 .sidebar {
-    width: 230px;
-    background-color: #0056b3;
+    width: 220px;
+    background-color: #1e3d59;
     color: #fff;
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar h2{
     text-align: center;
     margin-bottom: 30px;
+    color: #f5c518;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f5c518;
 }
 
 .sidebar ul{
@@ -33,19 +38,72 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: backround-color 0.3s;
+    border-radius: 8px;
 }
 
-.sidebar ul li a:hover{
-    text-decoration: underline;
+.sidebar ul li a:hover, .sidebar ul li :active{
+    background-color: #295c8a;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 260px;
+    right: 0;
+    height: 60px;
+    background-color: #295c8a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.navbar-left h3{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-right span {
+    font-weight: 500;
+    color: #fff;
+}
+
+.logout-btn {
+    background-color: #f5c518;
+    color: #1e3d59;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.logout-btn:hover{
+    background-color: #d4a915;
 }
 
 .content {
     margin-left: 250px;
     padding: 30px;
+    margin-top: 60px;
+    flex: 1;
 }
 
 .content h1{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color: #333;
 }
 
@@ -63,10 +121,38 @@ body {
     flex: 1;
     min-width: 250px;
     text-align: center;
+    transition: transform 0.3s;
+}
+
+.card.karyawan{
+    border-left: 8px solid #007bff;
+}
+
+.card.penjualan{
+    border-left: 8px solid #28a745;
+}
+
+.card.stok{
+    border-left: 8px solid #ffc107;
+}
+
+.card.karyawan:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.20);
+}
+
+.card.penjualan:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.20);
+}
+
+.card.stok:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.20);
 }
 
 .card h3 {
-    color: #0056b3;
+    color: #295c8a;
 }
 
 .card p {
@@ -80,5 +166,6 @@ body {
     width: 100px;
     height: auto;
     margin: 0 auto 15px;
-    border-radius: 10px;
+    border-radius: 50px;
+    margin-bottom: 10px;
 }
