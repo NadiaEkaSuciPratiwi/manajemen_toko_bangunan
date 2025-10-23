@@ -64,8 +64,8 @@
     </div>
 </section>
 
-<footer>
-    &copy;2025 Ghenadi Sinar Abadi
+<footer class="footer">
+    &copy;2025 Ghenadi <span>Sinar Abadi</span>
 </footer>
 </body>
 </html>
