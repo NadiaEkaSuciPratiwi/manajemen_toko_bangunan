@@ -64,8 +64,7 @@
     </div>
 </section>
 
-<footer class="footer">
-    &copy;2025 Ghenadi <span>Sinar Abadi</span>
-</footer>
+<?php include 'footer.php'; ?>
+
 </body>
 </html>
