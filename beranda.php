@@ -45,22 +45,22 @@
 <section id="layanan" class="layanan">
     <h2>Layanan Kami</h2>
     <div class="cards">
-        <div class="card">
+        <div class="card" style="background-color: #c9d7f3;">
             <h3>👨‍💼👩‍💼</h3>
             <h3>Manajemen Karyawan</h3>
             <p>Tambah, edit, dan pantau data karyawan dengan mudah</p>
         </div>
-        <div class="card">
+        <div class="card" style="background-color: #c9d7f3;">
             <h3>📤</h3>
             <h3>Data Penjualan</h3>
             <p>Input dan pantau penjualan harian</p>
         </div>
-        <div class="card">
+        <div class="card" style="background-color: #c9d7f3;">
             <h3>📦</h3>
             <h3>Stok Barang</h3>
             <p>Cek stok barang yang tersedia ditoko kami</p>
         </div>
-        <div class="card">
+        <div class="card" style="background-color: #c9d7f3;">
             <h3>🚚</h3>
             <h3>Data Pembelian dan Supplier</h3>
             <p>Input dan pantau data pemeblian barang dari supplier</p>
