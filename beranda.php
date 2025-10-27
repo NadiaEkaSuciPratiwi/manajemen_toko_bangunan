@@ -68,7 +68,8 @@
     </div>
 </section>
 
-<?php include 'footer.php'; ?>
-
+        <footer class="footer">
+            &copy; <?php echo date('Y') ?> Ghenadi <span>Sinar Abadi</span>
+        </footer>
 </body>
 </html>

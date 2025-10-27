@@ -165,3 +165,15 @@ body{
     color: #295c8a;
     margin-bottom: 10px;
 }
+
+.footer{
+    background-color: #295c8a;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0px;
+    font-size: 14px;
+}
+
+.footer span {
+    color: #f5c518;
+}
