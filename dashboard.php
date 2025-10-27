@@ -61,7 +61,7 @@
         </div>
         <div class="navbar-right">
             <span> Hello, <?=$_SESSION['username'] ?> </span>
-            <a href="logout.php" class="logout-btn">Logout</a>
+            <a href="beranda.php" class="logout-btn">Logout</a>
         </div>
     </div>
 
