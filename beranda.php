@@ -28,7 +28,7 @@
 <section id="hero" class="hero">
     <div class="hero-content">
         <h2>Selamat Datang di Sistem Manajemen Toko Bangunan <span>Sinar Abadi</span></h2>
-        <p>MUdahkan pengelolaan tugas dan data toko</p>
+        <p>Mudahkan pengelolaan tugas dan data toko</p>
         <a href="login.php" class="button">Login Sekarang</a>
     </div>
     <div class="hero-img">
