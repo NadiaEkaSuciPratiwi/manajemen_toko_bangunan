@@ -40,20 +40,8 @@
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
-<body>
-    <div class="sidebar">
-        <img src="logo.jpg" class="logo">
-        <h2>Sinar Abadi</h2> 
-
-        <ul>
-            <li><a href="dashboard.php">Dashboard</a></li>
-            <li><a href="karyawan.php">Karyawan</a></li>
-            <li><a href="penjualan.php">Penjualan</a></li>
-            <li><a href="pembelian.php">Pembelian</a></li>
-            <li><a href="barang.php">Barang</a></li>
-        </ul>
-
-    </div>
+<body>          
+    <?php include 'sidebar.php'; ?>
 
     <div class="navbar">
         <div class="navbar_left">
@@ -86,7 +74,6 @@
         <div class="card diagram">
             <h3>📈 Statistik Penjualan Bulanan</h3>
             <canvas id="lineChart"></canvas>
-        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -119,7 +106,10 @@
             }
             });
         </script>
+        </div>
     </div>
+
+    <?php include 'footer.php'; ?>
     
 </body>
 </html>

@@ -63,7 +63,7 @@
         <div class="card">
             <h3>🚚</h3>
             <h3>Data Pembelian dan Supplier</h3>
-            <p>Input dan pantau data pemeblian barang dari supplier</p>
+            <p>Input dan pantau data pemebelian barang dari supplier</p>
         </div>
     </div>
 </section>

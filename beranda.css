@@ -146,33 +146,22 @@ body{
 }
 
 .cards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
     gap: 25px;
+    margin: 0 auto;
 }
 
 .card{
     background-color: #c9d7f3;
     padding: 25px;
     border-radius: 10px;
-    width: 280px;
+    text-align: center;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card h3{
     color: #295c8a;
     margin-bottom: 10px;
-}
-
-.footer{
-    background-color: #1e3d59;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 14px;
-}
-
-.footer span {
-    color: #f5c518;
 }
