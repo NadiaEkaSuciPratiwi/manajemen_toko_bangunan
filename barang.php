@@ -26,16 +26,6 @@
         </div>
     </div>
 
-    <div class="navbar">
-        <div class="navbar_left">
-            <h3>Data Barang</h3>
-        </div>
-        <div class="navbar-right">
-            <span> Hello, <?=$_SESSION['username'] ?> </span>
-            <a href="beranda.php" class="logout-btn">Logout</a>
-        </div>
-    </div>
-
 <div class="content">
     <h2>Table Data Barang</h2>
 
@@ -67,7 +57,7 @@
                 </td>
                 <td><?= $row['nama_kategori'] ?></td>
                 <td><?= $row['satuan'] ?></td>
-                <td><?= $row['harga'] ?></td>               
+                <td>Rp <?= number_format($row['harga'], 0, ',', '.') ?></td>               
                 <td><?= $row['stok'] ?></td>               
                 <td class="aksi-btn">
                         <a href="edit_barang.php?id=<?$row['id_barang'] ?>" class="edit">Edit</a>
