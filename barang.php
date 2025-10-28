@@ -36,9 +36,10 @@
         </div>
     </div>
 
-    <h2>Data Barang</h2>
+<div class="content">
+    <h2>Table Data Barang</h2>
 
-    <a href="create_barang.php">+ Tambah Barang</a>
+    <a href="create_barang.php" class="tambah-btn">+ Tambah Barang</a>
 
     <table>
         <thead>
@@ -76,5 +77,8 @@
             <?php } ?>
         </tbody>
     </table>
+</div>
+
+<?php include 'footer.php'; ?>
 </body>
 </html>

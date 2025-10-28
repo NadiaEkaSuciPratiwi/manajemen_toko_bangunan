@@ -9,7 +9,7 @@
 
     //ambil data barang dan kategori, pakai join biar tampil nama kategori
     function getALLBarang($koneksi){
-        $query = "SELECT barang.*, kategori.nama_kategori From barang LEFT JOIN kategori ON barang.id_kategori = kategori.id_kategori";
+        $query = "SELECT barang.*, kategori1.nama_kategori From barang LEFT JOIN kategori1 ON barang.id_kategori = kategori1.id_kategori";
         $result = mysqli_query($koneksi, $query);
 
         $data = [];
