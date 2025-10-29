@@ -17,7 +17,7 @@
 
     <div class="navbar">
         <div class="navbar_left">
-            <h3>Dashboard</h3>
+            <h3>Karyawan</h3>
         </div>
         <div class="navbar-right">
             <span> Hello, <?=$_SESSION['username'] ?> </span>

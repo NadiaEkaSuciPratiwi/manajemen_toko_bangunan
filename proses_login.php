@@ -15,6 +15,7 @@
 
         $_SESSION['user_id'] = $data['id'];
         $_SESSION['username'] = $data['username'];
+        $_SESSION['peran'] = $data['peran'];
 
         header("Location: dashboard.php");
         exit;
