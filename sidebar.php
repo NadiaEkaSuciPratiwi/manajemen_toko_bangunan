@@ -14,6 +14,7 @@
         <ul>
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="karyawan.php">Karyawan</a></li>
+            <li><a href="supplier.php">Supplier</a></li>
             <li><a href="penjualan.php">Penjualan</a></li>
             <li><a href="pembelian.php">Pembelian</a></li>
             <li><a href="barang.php">Barang</a></li>
