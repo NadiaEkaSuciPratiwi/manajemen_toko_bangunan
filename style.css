@@ -45,6 +45,10 @@ body{
     background-color: #295c8a;
 }
 
+.sidebar ul li a.active {
+    background-color: #295c8a !important;
+}
+
 .logo{
     display: block;
     width: 100px;

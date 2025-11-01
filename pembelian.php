@@ -51,7 +51,7 @@
                 <td><?= $row['jumlah'] ?></td>                     
                 <td>Rp <?= number_format($row['harga_beli'], 0, ',', '.') ?></td>
                 <td>Rp <?= number_format($row['total_harga'], 0, ',', '.') ?></td>
-                <td><?= $row['tanggal_pembelian'] ?></td>
+                <td><?= formatTanggal($row['tanggal_pembelian']) ?></td>
                 <td class="aksi-btn">
                         <a href="edit_pembelian.php?id=<?$row['id_pembelian'] ?>" class="edit">Edit</a>
                         <a href="hapus_pembelian.php?id=<?$row['id_pembelian'] ?>" class="hapus" onclick="return confirm('Yakin mau hapus?')">Hapus</a>
