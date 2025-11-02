@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'koneksi.php';
 
 if(!isset($_SESSION['user_id'])){
@@ -7,8 +6,10 @@ if(!isset($_SESSION['user_id'])){
     exit;
 }
 
+
 $nama_barang = $_POST['nama_barang'];
-$kategori_id = $_POST['kategori_id'];
+$id_kategori = $_POST['id_kategori'];
+$satuan = $_POST['satuan'];
 $harga = $_POST['harga'];
 $stok = $_POST['stok'];
 
@@ -35,8 +36,8 @@ if(isset($_FILES['foto']) && $_FILES['foto']['error'] == 0){
 }
 
 // Simpan ke database
-$query = "INSERT INTO barang (nama_barang, kategori_id, harga, stok, foto) 
-          VALUES ('$nama_barang', '$kategori_id', '$harga', '$stok', '$file_name')";
+$query = "INSERT INTO barang (nama_barang, foto, id_kategori, satuan, harga, stok) 
+          VALUES ('$nama_barang', '$file_name', '$id_kategori', '$satuan', '$harga', '$stok' )";
 
 if(mysqli_query($koneksi, $query)){
     echo "<div class='alert success'>Barang berhasil ditambahkan! <a href='barang.php'>Lihat Daftar Barang</a></div>";
