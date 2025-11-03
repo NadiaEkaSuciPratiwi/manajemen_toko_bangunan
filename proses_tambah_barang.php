@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'koneksi.php';
 
 if(!isset($_SESSION['user_id'])){
@@ -21,7 +22,7 @@ if(isset($_FILES['foto']) && $_FILES['foto']['error'] == 0){
     $allowed = ['jpg','jpeg','png','gif'];
 
     if(in_array(strtolower($file_ext), $allowed)){
-        $upload_dir = "uploads/";
+        $upload_dir = "produk/";
         if(!is_dir($upload_dir)){
             mkdir($upload_dir, 0777, true);
             // buat folder jika belum ada

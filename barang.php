@@ -60,8 +60,8 @@
                 <td>Rp <?= number_format($row['harga'], 0, ',', '.') ?></td>               
                 <td><?= $row['stok'] ?></td>               
                 <td class="aksi-btn">
-                        <a href="edit_barang.php?id=<?$row['id_barang'] ?>" class="edit">Edit</a>
-                        <a href="hapus_barang.php?id=<?$row['id_barang'] ?>" class="hapus" onclick="return confirm('Yakin mau hapus?')">Hapus</a>
+                        <a href="edit_barang.php?id=<?= $row['id_barang']; ?>" class="edit">Edit</a>
+                        <a href="hapus_barang.php?id=<?= $row['id_barang']; ?>" class="hapus" onclick="return confirm('Yakin mau hapus?')">Hapus</a>
                 </td>               
             </tr>
             <?php } ?>
