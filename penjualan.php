@@ -49,7 +49,7 @@
                 <td><?= $row['nama_barang'] ?></td>
                 <td><?= $row['jumlah'] ?></td>
                 <td>Rp <?= number_format($row['total_harga'], 0, ',', '.') ?></td>               
-                <td><?= $row['tanggal_penjualan'] ?></td>               
+                <td><?= formatTanggal($row['tanggal_penjualan']) ?></td>               
                 <td class="aksi-btn">
                         <a href="edit_penjualan.php?id=<?$row['id_penjualan'] ?>" class="edit">Edit</a>
                         <a href="hapus_penjualan.php?id=<?$row['id_penjualan'] ?>" class="hapus" onclick="return confirm('Yakin mau hapus?')">Hapus</a>

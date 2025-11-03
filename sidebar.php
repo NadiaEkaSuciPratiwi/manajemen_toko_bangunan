@@ -21,5 +21,16 @@
         </ul>
     </div>
     
+    <script>
+        const currentUrl = window.location.href;
+const sideLinks = document.querySelectorAll(".sidebar ul li a");
+
+sideLinks.forEach(link => {
+    if (currentUrl.includes(link.getAttribute("href"))) {
+        link.classList.add("active");
+    }
+});
+
+    </script>
 </body>
 </html>
