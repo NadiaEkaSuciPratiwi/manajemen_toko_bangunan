@@ -1,65 +1,76 @@
 <?php
-session_start();
-include 'koneksi.php';
+include 'koneksi.php'; // pastikan ini sama dengan file koneksi kamu
 
-if(!isset($_SESSION['user_id'])){
-    header("Location: login.php");
-    exit;
+// Ambil data pembelian berdasarkan ID
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $query = mysqli_query($koneksi, "SELECT * FROM pembelian1 WHERE id_pembelian='$id'");
+    $data = mysqli_fetch_assoc($query);
 }
 
-$id = $_GET['id'];
+//ambil data supplier
+$supplier = mysqli_query($koneksi, "SELECT * FROM supplier");
 
-// Data pembelian
-$pembelian = mysqli_query($conn, "SELECT * FROM pembelian WHERE id_pembelian='$id'");
-$data = mysqli_fetch_assoc($pembelian);
+// Jika form disubmit
+if (isset($_POST['update'])) {
+    $id_supplier = $_POST['id_supplier'];
+    $jumlah = $_POST['jumlah'];
+    $harga_beli = $_POST['harga_beli'];
+    $total_harga = $jumlah * $harga_beli;
+    $tanggal_pembelian = $_POST['tanggal_pembelian'];
 
-// Data barang untuk dropdown
-$barang = mysqli_query($conn, "SELECT id_barang, nama_barang FROM barang");
+    $update = mysqli_query($koneksi, "UPDATE pembelian1 SET 
+                id_supplier='$id_supplier', 
+                jumlah='$jumlah', 
+                harga_beli='$harga_beli', 
+                total_harga='$total_harga', 
+                tanggal_pembelian='$tanggal_pembelian'
+              WHERE id_pembelian='$id'");
+
+    if ($update) {
+        echo "<script>alert('Data berhasil diperbarui!');window.location='pembelian.php';</script>";
+    } else {
+        echo "<script>alert('Gagal memperbarui data!');</script>";
+    }
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Pembelian</title>
+    
 </head>
 <body>
 
-<h2>Edit Pembelian</h2>
+    <div class="content">
+        <h2>Edit Pembelian</h2>
+        <form method="POST">
+            <label>Nama Supplier</label><br>
+            <select name="id_supplier" required>
+                <option value="">-- Pilih Supplier --</option>
+                <?php while ($s = mysqli_fetch_assoc($supplier)) { ?>
+                    <option value="<?= $s['id_supplier'] ?>" <?= ($s['id_supplier'] == $data['id_supplier']) ? 'selected' : '' ?>>
+                        <?= $s['nama_supplier'] ?>
+                    </option>
+                <?php } ?>
+            </select> <br>
 
-<form action="proses_edit_pembelian.php" method="POST">
+            <label>Jumlah</label><br>
+            <input type="number" name="jumlah" value="<?= $data['jumlah'] ?>" required><br>
 
-    <input type="hidden" name="id_pembelian" value="<?= $data['id_pembelian']; ?>">
-    <input type="hidden" name="jumlah_lama" value="<?= $data['jumlah']; ?>">
+            <label>Harga Beli</label><br>
+            <input type="number" name="harga_beli" value="<?= $data['harga_beli'] ?>" required><br>
 
-    <label>Nama Barang</label><br>
-    <select name="id_barang" required>
-        <?php while($b = mysqli_fetch_assoc($barang)) { ?>
-            <option value="<?= $b['id_barang']; ?>" 
-                <?= $b['id_barang'] == $data['id_barang'] ? 'selected' : ''; ?>>
-                <?= $b['nama_barang']; ?>
-            </option>
-        <?php } ?>
-    </select><br><br>
+            <label>Tanggal Pembelian</label><br>
+            <input type="date" name="tanggal_pembelian" value="<?= $data['tanggal_pembelian'] ?>" required><br>
 
-    <label>Supplier</label><br>
-    <input type="text" name="supplier" value="<?= $data['supplier']; ?>" required><br><br>
-
-    <label>Jumlah</label><br>
-    <input type="number" name="jumlah" value="<?= $data['jumlah']; ?>" required><br><br>
-
-    <label>Harga Beli</label><br>
-    <input type="number" name="harga_beli" value="<?= $data['harga_beli']; ?>" required><br><br>
-
-    <label>Total Harga</label><br>
-    <input type="number" name="total_harga" value="<?= $data['total_harga']; ?>" required><br><br>
-
-    <label>Tanggal Pembelian</label><br>
-    <input type="date" name="tanggal" value="<?= $data['tanggal']; ?>" required><br><br>
-
-    <button type="submit">Simpan Perubahan</button>
-
-</form>
+            <button type="submit" name="update" class="tambah-btn">Update</button>
+            <a href="pembelian.php" class="batal-btn">Batal</a>
+        </form>
+    </div>
 
 </body>
 </html>
