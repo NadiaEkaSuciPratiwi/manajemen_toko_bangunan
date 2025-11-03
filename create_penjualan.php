@@ -40,8 +40,11 @@ if(isset($_POST['submit'])){
 <head>
     <meta charset="UTF-8">
     <title>Tambah Penjualan</title>
+    <link rel="stylesheet" href="crud_penjualan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<div>
+    <div class="form-edit">
     <h2>Tambah Penjualan</h2>
     <form method="POST" action="">
         <label>Nama Barang:</label>
@@ -69,8 +72,8 @@ if(isset($_POST['submit'])){
         <input type="date" name="tanggal_penjualan" required>
         <br><br>
 
-        <button type="submit" name="submit">Simpan</button>
-        <a href="penjualan.php">Batal</a>
+        <button type="submit" name="submit" class="btn-update">Simpan</button>
+        <button class="btn-back"><a href="penjualan.php"></a>Batal</button>
     </form>
 
     <script>
@@ -90,5 +93,6 @@ if(isset($_POST['submit'])){
             totalInput.value = harga * this.value;
         });
     </script>
+    </div>
 </body>
 </html>
