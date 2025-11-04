@@ -63,7 +63,7 @@
         </div>
         
         <div class="about-img">
-            <img src="logo/logo.jpg">
+            <img src="foto/logo.jpg">
         </div>
     </div>
 </div>
