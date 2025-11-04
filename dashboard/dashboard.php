@@ -1,10 +1,10 @@
 
 <?php
     session_start();
-    include 'koneksi.php';
+    include '../koneksi.php';
 
     if(!isset($_SESSION['user_id'])){
-        header("Location: login.php");
+        header("Location: ../login/login.php");
         exit;
     }
 
@@ -36,12 +36,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 <body>          
-    <?php include 'sidebar.php'; ?>
+    <?php include '../include/sidebar.php'; ?>
 
     <div class="navbar">
         <div class="navbar_left">
@@ -49,7 +49,7 @@
         </div>
         <div class="navbar-right">
             <span> Hello, <?=$_SESSION['username'] ?> </span>
-            <a href="beranda.php" class="logout-btn">Logout</a>
+            <a href="../beranda.php" class="logout-btn">Logout</a>
         </div>
     </div>
 
@@ -109,7 +109,7 @@
         </div>
     </div>
 
-    <?php include 'footer.php'; ?>
+    <?php include '../include/footer.php'; ?>
     
 </body>
 </html>

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <title>Tambah Supplier</title>
 
-    <link rel="stylesheet" href="../crud.css">
+    <link rel="stylesheet" href="../css/crud.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>

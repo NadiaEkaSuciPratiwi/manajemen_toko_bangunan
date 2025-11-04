@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beranda</title>
 
-    <link rel="stylesheet" href="beranda.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/beranda.css?v=<?php echo time(); ?>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -14,7 +14,7 @@
     
 <nav class="navbar-home">
     <div class="logo-area">
-        <img src="logo.jpg" alt="" class="logo">
+        <img src="foto/logo.jpg" alt="" class="logo">
         <h1>Sinar Abadi</h1>
     </div>
 
@@ -23,7 +23,7 @@
         <li><a href="#about">Tentang Kami</a></li>
         <li><a href="#layanan">Layanan</a></li>
         <li><a href="#produk">Produk</a></li>
-        <li><a href="login.php" class="login-btn">Login</a></li>
+        <li><a href="login/login.php" class="login-btn">Login</a></li>
     </ul>
 </nav>
 
@@ -31,10 +31,10 @@
     <div class="hero-content">
         <h2>Selamat Datang di Sistem Manajemen Toko Bangunan <span>Sinar Abadi</span></h2>
         <p>Mudahkan pengelolaan tugas dan data toko</p>
-        <a href="login.php" class="button">Login Sekarang</a>
+        <a href="login/login.php" class="button">Login Sekarang</a>
     </div>
     <div class="hero-img">
-        <img src="logo.jpg" alt="">
+        <img src="foto/logo.jpg" alt="">
     </div>
 </section>
 
@@ -63,7 +63,7 @@
         </div>
         
         <div class="about-img">
-            <img src="logo.jpg">
+            <img src="logo/logo.jpg">
         </div>
     </div>
 </div>

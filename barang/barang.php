@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <?php include '../sidebar.php'; ?>
+    <?php include '../include/sidebar.php'; ?>
 
     <div class="navbar">
         <div class="navbar_left">
@@ -69,6 +69,6 @@
     </table>
 </div>
 
-<?php include '../footer.php'; ?>
+<?php include '../include/footer.php'; ?>
 </body>
 </html>

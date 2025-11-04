@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="sidebar">
-        <img src="../logo.jpg" class="logo">
+        <img src="../foto/logo.jpg" class="logo">
         <h2>Sinar Abadi</h2> 
         <ul>
-            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="../dashboard/dashboard.php">Dashboard</a></li>
             <li><a href="../karyawan/karyawan.php">Karyawan</a></li>
             <li><a href="../supplier/supplier.php">Supplier</a></li>
             <li><a href="../penjualan/penjualan.php">Penjualan</a></li>

@@ -4,7 +4,7 @@
 
 body {
       font-family: Poppins, sans-serif;
-      background-image: url('toko.jpg');
+      background-image: url('../toko.jpg');
       background-size: cover;
       display: flex;
       justify-content: center;

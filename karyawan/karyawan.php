@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php include '../sidebar.php'; ?>
+    <?php include '../include/sidebar.php'; ?>
 
     <div class="navbar">
         <div class="navbar_left">
@@ -61,6 +61,6 @@
     </table>
 </div>
 
-<?php include '../footer.php'; ?>
+<?php include '../include/footer.php'; ?>
 </body>
 </html>

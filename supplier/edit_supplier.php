@@ -16,9 +16,16 @@ if(!$data){
     exit;
 }
 ?>
-
-<h2>Edit Supplier</h2>
-<form action="proses_edit_supplier.php" method="POST">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier</title>
+</head>
+<body>
+    <h2>Edit Supplier</h2>
+    <form action="proses_edit_supplier.php" method="POST">
     <input type="hidden" name="id_supplier" value="<?= $data['id_supplier']; ?>">
 
     <label>Nama Supplier</label><br>
@@ -33,3 +40,5 @@ if(!$data){
     <button type="submit">Update</button>
     <a href="supplier.php">Batal</a>
 </form>
+</body>
+</html>

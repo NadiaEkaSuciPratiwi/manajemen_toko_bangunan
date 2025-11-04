@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'koneksi.php';
+    include '../koneksi.php';
 
     //ambil data di form
     $username = $_POST['username'];
@@ -17,7 +17,7 @@
         $_SESSION['username'] = $data['username'];
         $_SESSION['peran'] = $data['peran'];
 
-        header("Location: dashboard.php");
+        header("Location: ../dashboard/dashboard.php");
         exit;
     } else{
         header("Location: login.php?error=1");

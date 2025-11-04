@@ -3,7 +3,7 @@ include '../koneksi.php';
 
 // cek login
 if (!isset($_SESSION['user_id'])) {
-    header("Location: .../login.php");
+    header("Location: .../login/login.php");
     exit;
 }
 
