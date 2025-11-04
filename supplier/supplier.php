@@ -49,8 +49,8 @@
                 <td><?= $row['alamat'] ?></td>             
                 <td><?= $row['no_telpon'] ?></td>               
                 <td class="aksi-btn">
-                        <a href="edit_supplier.php?id=<?$row['id_supplier'] ?>" class="edit">Edit</a>
-                        <a href="hapus_supplier.php?id=<?$row['id_supplier'] ?>" class="hapus" onclick="return confirm('Yakin mau hapus?')">Hapus</a>
+                        <a href="edit_supplier.php?id=<?= $row['id_supplier'] ?>" class="edit">Edit</a>
+                        <a href="hapus_supplier.php?id=<?= $row['id_supplier'] ?>" class="hapus" onclick="return confirm('Yakin mau hapus?')">Hapus</a>
                 </td>               
             </tr>
             <?php } ?>
