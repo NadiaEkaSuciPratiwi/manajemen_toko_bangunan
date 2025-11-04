@@ -28,8 +28,28 @@ if(isset($_GET['pesan']) && $_GET['pesan'] == "gagal") {
 
 <form action="proses_tambah_pembelian.php" method="POST">
 
-    <label>Nama Supplier</label><br>
-    <input type="text" name="supplier" required><br><br>
+    <label>Supplier</label><br>
+    <select name="id_supplier" required>
+    <?php
+    include 'koneksi.php';
+    $data = mysqli_query($koneksi, "SELECT * FROM supplier");
+    while ($d = mysqli_fetch_array($data)) {
+        echo "<option value='".$d['id_supplier']."'>".$d['nama_supplier']."</option>";
+    }
+    ?>
+    </select><br>
+
+    <label>Barang</label><br>
+<select name="id_barang" required>
+<?php
+include 'koneksi.php';
+$data = mysqli_query($koneksi, "SELECT * FROM barang");
+while ($d = mysqli_fetch_array($data)) {
+    echo "<option value='".$d['id_barang']."'>".$d['nama_barang']."</option>";
+}
+?>
+</select><br><br>
+
 
     <label>Jumlah</label><br>
     <input type="number" name="jumlah" required><br><br>
@@ -44,7 +64,7 @@ if(isset($_GET['pesan']) && $_GET['pesan'] == "gagal") {
     <input type="date" name="tgl" required><br><br>
 
     <button type="submit">Simpan</button>
-
+    <a href="pembelian.php">Batal</a>
 </form>
 
 </body>

@@ -17,13 +17,13 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1");
     <h2>Tambah Barang</h2>
     
     <form action="proses_tambah_barang.php" method="POST" enctype="multipart/form-data">
-        <label>Nama Barang:</label>
-        <input type="text" name="nama_barang" required>
+        <label>Nama Barang:</label><br>
+        <input type="text" name="nama_barang" required><br>
 
-        <label>Foto:</label>
-        <input type="file" name="foto" accept="image/*" required>
+        <label>Foto:</label><br>
+        <input type="file" name="foto" accept="image/*" required><br>
 
-        <label>Kategori:</label>
+        <label>Kategori:</label><br>
         <select name="id_kategori" required>
         <option value="">-- Pilih Kategori --</option>
         <?php while ($row = mysqli_fetch_assoc($queryKategori)) : ?>
@@ -31,20 +31,21 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1");
                 <?= $row['nama_kategori']; ?>
             </option>
         <?php endwhile; ?>
-        </select>
+        </select><br>
 
-        <label>Satuan:</label>
-        <input type="text" name="satuan" required>
+        <label>Satuan:</label><br>
+        <input type="text" name="satuan" required><br>
 
-        <label>Harga:</label>
-        <input type="number" name="harga" required>
+        <label>Harga:</label><br>
+        <input type="number" name="harga" required><br>
 
-        <label>Stok:</label>
-        <input type="number" name="stok" required>
+        <label>Stok:</label><br>
+        <input type="number" name="stok" required><br>
 
         <button type="submit">Tambah Barang</button>
+        <a href="barang.php">Batal</a>
     </form>
 
-    <a href="barang.php">Batal</a>
+    
 </body>
 </html>

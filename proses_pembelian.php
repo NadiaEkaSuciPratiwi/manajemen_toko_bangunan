@@ -9,9 +9,9 @@ if(!isset($_SESSION['user_id'])){
 }
 
 // Fungsi format tanggal
-    function formatTanggal($tanggal){
+    function formatTanggal($tanggal_pembelian){
 
-    return date('d-m-Y', strtotime($tanggal));
+    return date('d-m-Y', strtotime($tanggal_pembelian));
     
     }
 
