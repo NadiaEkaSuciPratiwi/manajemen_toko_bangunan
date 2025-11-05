@@ -107,7 +107,7 @@
         while($data = mysqli_fetch_assoc($query)) {
         ?>
             <div class="produk-card">
-                <img src="produk/<?php echo $data['foto']; ?>" alt="<?php echo $data['nama_barang']; ?>">
+                <img src="barang/produk/<?php echo $data['foto']; ?>" alt="<?php echo $data['nama_barang']; ?>">
                 <h3><?php echo $data['nama_barang']; ?></h3>
                 <p>Rp <?php echo number_format($data['harga'],0,',','.'); ?></p>
             </div>
