@@ -15,7 +15,7 @@ if(!isset($_SESSION['user_id'])){
     <meta charset="UTF-8">
     <title>Tambah Pembelian</title>
 
-    <link rel="stylesheet" href="../css/crud.css">
+    <link rel="stylesheet" href="../css/crud_pembelian.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -32,7 +32,7 @@ if(isset($_GET['pesan']) && $_GET['pesan'] == "gagal") {
 
 <form action="proses_tambah_pembelian.php" method="POST">
 
-    <label>Supplier</label><br>
+    <label>Supplier</label>
     <select name="id_supplier" required>
     <?php
     include '../koneksi.php';
@@ -41,9 +41,9 @@ if(isset($_GET['pesan']) && $_GET['pesan'] == "gagal") {
         echo "<option value='".$d['id_supplier']."'>".$d['nama_supplier']."</option>";
     }
     ?>
-    </select><br>
+    </select>
 
-    <label>Barang</label><br>
+    <label>Barang</label>
     <select name="id_barang" required>
     <?php
     include '../koneksi.php';
@@ -52,24 +52,41 @@ if(isset($_GET['pesan']) && $_GET['pesan'] == "gagal") {
         echo "<option value='".$d['id_barang']."'>".$d['nama_barang']."</option>";
     }
     ?>
-    </select><br><br>
+    </select>
 
 
-    <label>Jumlah</label><br>
-    <input type="number" name="jumlah" required><br><br>
+    <label>Jumlah</label>
+    <input type="number" name="jumlah" required>
 
-    <label>Harga Beli</label><br>
-    <input type="number" name="harga_beli" required><br><br>
+    <label>Harga Beli</label>
+    <input type="number" name="harga_beli" required>
 
-    <label>Total Harga</label><br>
-    <input type="number" name="total_harga" required><br><br>
+    <label>Total Harga</label>
+    <input type="number" name="total_harga" readonly>
 
-    <label>Tanggal Pembelian</label><br>
-    <input type="date" name="tanggal_pembelian" required><br><br>
+    <label>Tanggal Pembelian</label>
+    <input type="date" name="tanggal_pembelian" required>
 
     <button type="submit" class="btn-update">Simpan</button>
-    <button class="btn-back"><a href="pembelian.php"></a>Batal</button>
+    <a href="pembelian.php" class="btn-back">Batal</a>
 </form>
+
+    <script>
+    const jumlahInput = document.querySelector('input[name="jumlah"]');
+    const hargaInput = document.querySelector('input[name="harga_beli"]');
+    const totalInput = document.querySelector('input[name="total_harga"]');
+
+    function hitungTotal() {
+        const jumlah = parseFloat(jumlahInput.value) || 0;
+        const harga = parseFloat(hargaInput.value) || 0;
+        const total = jumlah * harga;
+        totalInput.value = total;
+    }
+
+    jumlahInput.addEventListener("input", hitungTotal);
+    hargaInput.addEventListener("input", hitungTotal);
+    </script>
+
 </div>
 </body>
 </html>

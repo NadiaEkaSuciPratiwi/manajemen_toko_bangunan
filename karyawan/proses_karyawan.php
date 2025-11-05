@@ -22,7 +22,11 @@ if (!isset($_SESSION['peran']) || $_SESSION['peran'] !== 'admin') {
 }
 
 // ambil data karyawan
-$query = mysqli_query($koneksi, "SELECT * FROM karyawan ORDER BY id_karyawan ASC");
+$query = mysqli_query($koneksi, 
+"SELECT karyawan.*, users.username 
+ FROM karyawan karyawan
+ JOIN users users ON karyawan.id = users.id
+ ORDER BY id_karyawan DESC");
 
 $karyawan = [];
 while ($row = mysqli_fetch_assoc($query)) {

@@ -52,8 +52,8 @@
                 <td><?= $row['no_telp'] ?></td>               
                 <td><?= formatTanggal($row['tanggal_join']) ?></td>               
                 <td class="aksi-btn">
-                        <a href="edit_karyawan.php?id=<?$row['id_karyawan'] ?>" class="edit">Edit</a>
-                        <a href="hapus_karyawan.php?id=<?$row['id_karyawan'] ?>" class="hapus" onclick="return confirm('Yakin mau hapus?')">Hapus</a>
+                        <a href="edit_karyawan.php?id=<?= $row['id_karyawan'] ?>" class="edit">Edit</a>
+                        <a href="hapus_karyawan.php?id=<?= $row['id_karyawan'] ?>" class="hapus" onclick="return confirm('Yakin mau hapus?')">Hapus</a>
                 </td>               
             </tr>
             <?php } ?>

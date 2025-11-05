@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
 <head>
     <meta charset="UTF-8">
     <title>Tambah Penjualan</title>
-    <link rel="stylesheet" href="../css/crud.css">
+    <link rel="stylesheet" href="../css/crud_penjualan.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <div>
@@ -73,7 +73,7 @@ if(isset($_POST['submit'])){
         <br><br>
 
         <button type="submit" name="submit" class="btn-update">Simpan</button>
-        <button class="btn-back"><a href="penjualan.php"></a>Batal</button>
+        <a href="penjualan.php" class="btn-back">Batal</a>
     </form>
 
     <script>

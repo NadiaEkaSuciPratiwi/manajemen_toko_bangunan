@@ -65,11 +65,14 @@ if($id_barang_lama == $id_barang_baru){
 }
 
 // update data penjualan
-mysqli_query($koneksi,
+ $query = mysqli_query($koneksi,
     "UPDATE penjualan 
     SET id_barang='$id_barang_baru', jumlah='$jumlah_baru', total_harga='$total_harga', tanggal_penjualan='$tanggal_penjualan'
     WHERE id_penjualan=$id_penjualan"
 );
 
-header("Location: penjualan.php?status=updated");
-exit;
+if ($query) {
+    echo "<script>alert('Data berhasil diupdate');window.location='penjualan.php';</script>";
+} else {
+    echo "<script>alert('Gagal update data');window.location='penjualan.php';</script>";
+}

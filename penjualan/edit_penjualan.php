@@ -30,7 +30,7 @@ if(!$penjualan){
 <meta charset="UTF-8">
 <title>Edit Penjualan</title>
 
-<link rel="stylesheet" href="../css/crud.css">
+<link rel="stylesheet" href="../css/crud_penjualan.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -67,7 +67,7 @@ if(!$penjualan){
             value="<?= $penjualan['tanggal_penjualan'] ?>" required><br><br>
 
         <button type="submit" class="btn-update">Simpan</button>
-        <button class="btn-back"><a href="penjualan.php"></a>Batal</button>
+        <a href="penjualan.php" class="btn-back">Batal</a>
 
         </form>
 
