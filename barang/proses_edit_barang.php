@@ -3,7 +3,7 @@ session_start();
 include '../koneksi.php';
 
 if(!isset($_SESSION['user_id'])){
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     exit;
 }
 
@@ -62,8 +62,7 @@ $sql = "UPDATE barang SET
         WHERE id_barang = $id_barang";
 
 if(mysqli_query($koneksi, $sql)){
-    header("Location: barang.php?pesan=update_sukses");
-    exit;
+    echo "<script>alert('Data barang berhasil diubah');window.location='barang.php';</script>";
 } else {
     echo "Error update: " . mysqli_error($koneksi) . " <a href='edit_barang.php?id=$id_barang'>Kembali</a>";
     exit;

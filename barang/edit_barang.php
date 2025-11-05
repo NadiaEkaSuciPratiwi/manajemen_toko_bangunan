@@ -27,7 +27,7 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1 ORDER BY nama_k
     <meta charset="utf-8">
     <title>Edit Barang</title>
     
-    <link rel="stylesheet" href="../css/crud.css">
+    <link rel="stylesheet" href="../css/crud_barang.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -59,19 +59,26 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1 ORDER BY nama_k
 
         <label>Stok</label>
         <input type="number" step="0.01" name="stok" required value="<?= htmlspecialchars($item['stok']) ?>">
+        
 
-        <label>Foto saat ini</label>
+        <div class="foto-container">
+        <div class="foto-saat-ini">
+        <label>Foto saat ini:</label>
         <?php if($item['foto'] && file_exists('produk/'.$item['foto'])): ?>
-            <img src="produk/<?= htmlspecialchars($item['foto']) ?>" alt="foto barang">
+            <img src="produk/<?= htmlspecialchars($item['foto']) ?>" alt="foto barang" class="preview-foto">
         <?php else: ?>
             <div>Tidak ada foto</div>
         <?php endif; ?>
+        </div>
 
-        <label>Ganti Foto (opsional)</label>
-        <input type="file" name="foto" accept="image/*">
+        <div class="ganti-foto">
+        <label>Ganti Foto (opsional):</label>
+        <input type="file" name="foto" class="file-input">
+        </div>
+        </div>
 
-        <button type="submit">Simpan Perubahan</button>
-        <a href="barang.php" style="margin-left:10px;">Batal</a>
+        <button type="submit" class="btn-update">Simpan</button>
+        <a href="barang.php" class="btn-back">Batal</a>
     </form>
     </div>
 </body>

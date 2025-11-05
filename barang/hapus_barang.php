@@ -3,7 +3,7 @@ session_start();
 include '../koneksi.php';
 
 if(!isset($_SESSION['user_id'])){
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     exit;
 }
 
@@ -27,8 +27,7 @@ if(mysqli_query($koneksi, "DELETE FROM barang WHERE id_barang = $id")){
     if($foto && file_exists('produk/'.$foto)){
         @unlink('produk/'.$foto);
     }
-    header("Location: barang.php?pesan=hapus_sukses");
-    exit;
+    echo "<script>alert('Data barang berhasil dihapus');window.location='barang.php';</script>";
 } else {
     echo "Gagal menghapus: " . mysqli_error($koneksi) . " <a href='barang.php'>Kembali</a>";
     exit;

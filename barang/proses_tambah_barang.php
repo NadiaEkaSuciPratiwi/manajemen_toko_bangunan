@@ -3,7 +3,7 @@ session_start();
 include '../koneksi.php';
 
 if(!isset($_SESSION['user_id'])){
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     exit;
 }
 
@@ -40,9 +40,9 @@ if(isset($_FILES['foto']) && $_FILES['foto']['error'] == 0){
 $query = "INSERT INTO barang (nama_barang, foto, id_kategori, satuan, harga, stok) 
           VALUES ('$nama_barang', '$file_name', '$id_kategori', '$satuan', '$harga', '$stok' )";
 
-if(mysqli_query($koneksi, $query)){
-    echo "<div class='alert success'>Barang berhasil ditambahkan! <a href='barang.php'>Lihat Daftar Barang</a></div>";
-} else {
-    echo "<div class='alert error'>Error: ".mysqli_error($koneksi)." <a href='tambah_barang.php'>Kembali</a></div>";
-}
+if($query){
+    echo "<script>alert('Data barang berhasil ditambahkan');window.location='barang.php';</script>";
+    } else {
+    echo "Gagal menambahkan data: " . mysqli_error($koneksi);
+    }
 ?>

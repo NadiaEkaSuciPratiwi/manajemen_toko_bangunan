@@ -50,7 +50,7 @@
                 <td><?= $no++ ?></td>
                 <td><?= $row['nama_barang'] ?></td>
                 <td><?php if ($row['foto']) { ?>
-                    <img src="../produk/<?=$row['foto']?>" alt="" width="60">
+                    <img src="produk/<?=$row['foto']?>" alt="" width="60">
                     <?php } else { ?>
                         <span>-</span>
                     <?php } ?>

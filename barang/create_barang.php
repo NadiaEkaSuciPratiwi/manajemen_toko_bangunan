@@ -13,7 +13,7 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1");
     <meta charset="UTF-8">
     <title>Tambah Barang</title>
 
-    <link rel="stylesheet" href="../css/crud.css">
+    <link rel="stylesheet" href="../css/crud_barang.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -22,13 +22,13 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1");
     <h2>Tambah Barang</h2>
     
     <form action="proses_tambah_barang.php" method="POST" enctype="multipart/form-data">
-        <label>Nama Barang:</label><br>
-        <input type="text" name="nama_barang" required><br>
+        <label>Nama Barang:</label>
+        <input type="text" name="nama_barang" required>
 
-        <label>Foto:</label><br>
-        <input type="file" name="foto" accept="image/*" required><br>
+        <label>Foto:</label>
+        <input type="file" name="foto" accept="image/*" required>
 
-        <label>Kategori:</label><br>
+        <label>Kategori:</label>
         <select name="id_kategori" required>
         <option value="">-- Pilih Kategori --</option>
         <?php while ($row = mysqli_fetch_assoc($queryKategori)) : ?>
@@ -36,19 +36,19 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1");
                 <?= $row['nama_kategori']; ?>
             </option>
         <?php endwhile; ?>
-        </select><br>
+        </select>
 
-        <label>Satuan:</label><br>
-        <input type="text" name="satuan" required><br>
+        <label>Satuan:</label>
+        <input type="text" name="satuan" required>
 
-        <label>Harga:</label><br>
-        <input type="number" name="harga" required><br>
+        <label>Harga:</label>
+        <input type="number" name="harga" required>
 
-        <label>Stok:</label><br>
-        <input type="number" name="stok" required><br>
+        <label>Stok:</label>
+        <input type="number" name="stok" required>
 
         <button type="submit" class="btn-update">Simpan</button>
-        <button class="btn-back"><a href="barang.php"></a>Batal</button>
+        <a href="barang.php" class="btn-back">Batal</a>
     </form>
 </div>
     
