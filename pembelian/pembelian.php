@@ -31,6 +31,12 @@
 
     <a href="create_pembelian.php" class="tambah-btn">+ Tambah Pembelian</a>
 
+    <form action="" method="GET" class="search-box">
+        <input type="text" name="cari" placeholder="Cari pembelian"
+                value="<?php echo isset($_GET['cari']) ? $_GET['cari'] : ''; ?>">
+    <button type="submit">Search</button>
+    </form>
+
     <table>
         <thead>
             <tr>

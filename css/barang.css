@@ -124,3 +124,40 @@ img {
     padding: 20px;
     margin-top: 30px;
 }
+
+.search-box {
+    width: 25%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.search-box input,
+.search-box select {
+    flex: 1;
+    padding: 8px !important;
+    border-radius: 6px !important;
+    border: 1px solid #777 !important;
+}
+
+.search-box input:focus,
+.search-box select:focus{
+    border-color: #f9c300 !important;
+    outline: none !important;
+    box-shadow: 0 0 6px rgba(249,195,0,0.4) !important;
+}
+
+.search-box button {
+    padding: 8px 16px;
+    border: none;
+    background: #ecc648;
+    color: #333;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #f5c518;
+}

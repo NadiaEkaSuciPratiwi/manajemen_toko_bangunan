@@ -102,7 +102,7 @@
     <div class="produk-container">
         <?php
         include 'koneksi.php';
-        $query = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id_barang DESC LIMIT 4");
+        $query = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id_barang DESC LIMIT 5");
 
         while($data = mysqli_fetch_assoc($query)) {
         ?>

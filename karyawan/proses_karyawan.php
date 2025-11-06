@@ -21,15 +21,32 @@ if (!isset($_SESSION['peran']) || $_SESSION['peran'] !== 'admin') {
     exit;
 }
 
-// ambil data karyawan
-$query = mysqli_query($koneksi, 
-"SELECT karyawan.*, users.username 
- FROM karyawan karyawan
- JOIN users users ON karyawan.id = users.id
- ORDER BY id_karyawan DESC");
+// Search Karyawan
+$search = isset($_GET['cari']) ? $_GET['cari'] : '';
 
-$karyawan = [];
-while ($row = mysqli_fetch_assoc($query)) {
-    $karyawan[] = $row;
+if($search != "") {
+    $query = "SELECT karyawan.*, users.username 
+            FROM karyawan 
+            JOIN users ON karyawan.id = users.id
+            WHERE karyawan.nama LIKE '%$search%' 
+               OR users.username LIKE '%$search%'
+               OR karyawan.no_telp LIKE '%$search%'
+            ORDER BY id_karyawan DESC";
+} else {
+    $query = "SELECT karyawan.*, users.username 
+            FROM karyawan 
+            JOIN users ON karyawan.id = users.id
+            ORDER BY id_karyawan DESC";
 }
+
+$result = mysqli_query($koneksi, $query);
+
+// Masukkan ke array
+$karyawan = [];
+if($result){
+    while($row = mysqli_fetch_assoc($result)){
+        $karyawan[] = $row;
+    }
+}
+
 ?>

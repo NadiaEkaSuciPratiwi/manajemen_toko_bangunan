@@ -26,9 +26,15 @@
     </div>
 
     <div class="content">
-    <h2>Table Data Karyawan</h2>
+    <h2>Data Karyawan</h2>
 
     <a href="create_karyawan.php" class="tambah-btn">+ Tambah Karyawan</a>
+
+    <form action="" method="GET" class="search-box">
+        <input type="text" name="cari" placeholder="Cari karyawan"
+                value="<?php echo isset($_GET['cari']) ? $_GET['cari'] : ''; ?>">
+    <button type="submit">Search</button>
+    </form>
 
     <table>
         <thead>

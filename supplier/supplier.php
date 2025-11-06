@@ -27,9 +27,15 @@
     </div>
 
     <div class="content">
-    <h2>Table Data Supplier</h2>
+    <h2>Data Supplier</h2>
 
     <a href="create_supplier.php" class="tambah-btn">+ Tambah Supplier</a>
+
+    <form method="GET" action="" class="search-box">
+    <input type="text" name="cari" placeholder="Cari supplier" 
+           value="<?php echo isset($_GET['cari']) ? $_GET['cari'] : ''; ?>">
+    <button type="submit">Search</button>
+    </form>
 
     <table>
         <thead>

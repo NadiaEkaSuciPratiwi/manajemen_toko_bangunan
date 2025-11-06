@@ -8,12 +8,23 @@ if(!isset($_SESSION['user_id'])){
     exit;
 }
 
-//Ambil data supplier dari database
-$query = mysqli_query($koneksi,"SELECT * FROM supplier ORDER BY id_supplier DESC");
+//Ambil data supplier 
+$search = isset($_GET['cari']) ? $_GET['cari'] : '';
 
-$supplier =[];
-while($row =mysqli_fetch_assoc($query)){
-    $supplier[] = $row;
+if($search != "") {
+    $query = "SELECT  * FROM supplier
+            WHERE supplier.nama_supplier LIKE '%$search%'
+            ORDER BY id_supplier DESC";
+} else {
+    $query = "SELECT * FROM supplier ORDER BY id_supplier DESC";
 }
 
+$result = mysqli_query($koneksi, $query);
+
+$supplier =[];
+if($result){
+    while($row =mysqli_fetch_assoc($result)){
+        $supplier[] = $row;
+    }
+}
 ?>

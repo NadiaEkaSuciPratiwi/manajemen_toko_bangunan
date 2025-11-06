@@ -29,7 +29,28 @@
 <div class="content">
     <h2>Data Barang</h2>
 
-    <a href="create_barang.php" class="tambah-btn">+ Tambah Barang</a>
+    <a href="create_barang.php" class="tambah-btn">+ Tambah Barang</a><br>
+
+    <form method="GET" action="" class="search-box">
+    <input type="text" name="cari" placeholder="Cari nama barang" 
+           value="<?= isset($_GET['cari']) ? $_GET['cari'] : '' ?>">
+
+    <select name="kategori">
+        <option value="">Semua Kategori</option>
+        <?php 
+        $kat = mysqli_query($koneksi, "SELECT * FROM kategori1");
+        while($k = mysqli_fetch_assoc($kat)) { 
+            $selected = (isset($_GET['kategori']) && $_GET['kategori'] == $k['id_kategori']) ? "selected" : "";
+        ?>
+            <option value="<?= $k['id_kategori'] ?>" <?= $selected ?>>
+                <?= $k['nama_kategori'] ?>
+            </option>
+        <?php } ?>
+    </select>
+
+    <button type="submit">Filter</button>
+    </form>
+
 
     <table>
         <thead>

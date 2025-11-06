@@ -18,19 +18,21 @@
             <li><a href="../penjualan/penjualan.php">Penjualan</a></li>
             <li><a href="../pembelian/pembelian.php">Pembelian</a></li>
             <li><a href="../barang/barang.php">Barang</a></li>
+            <li><a href="../laporan/laporan.php">Laporan</a></li>
         </ul>
     </div>
     
     <script>
-        const currentUrl = window.location.href;
-const sideLinks = document.querySelectorAll(".sidebar ul li a");
+        const currentPage = window.location.pathname.split("/").pop();
+        const sideLinks = document.querySelectorAll(".sidebar ul li a");
 
-sideLinks.forEach(link => {
-    if (currentUrl.includes(link.getAttribute("href"))) {
-        link.classList.add("active");
-    }
-});
+        sideLinks.forEach(link => {
+        const linkPage = link.getAttribute("href").split("/").pop();
 
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+        });
     </script>
 </body>
 </html>

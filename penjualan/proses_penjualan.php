@@ -15,16 +15,34 @@
 
     }
 
-    //ambil data penjualan
-    $query = mysqli_query($koneksi, "SELECT penjualan.id_penjualan, barang.nama_barang,
-           penjualan.jumlah, penjualan.total_harga,
-           penjualan.tanggal_penjualan
-    FROM penjualan
-    JOIN barang ON penjualan.id_barang = barang.id_barang
-    ORDER BY penjualan.id_penjualan ASC");
+    // Ambil data penjualan
+    $search = isset($_GET['cari']) ? $_GET['cari'] : '';
+
+    if($search != "") {
+        $query = "SELECT penjualan.id_penjualan, barang.nama_barang,
+                        penjualan.jumlah, penjualan.total_harga,
+                        penjualan.tanggal_penjualan
+                FROM penjualan
+                LEFT JOIN barang ON penjualan.id_barang = barang.id_barang
+                WHERE penjualan.tanggal_penjualan LIKE '%$search%'
+                    OR barang.nama_barang LIKE '%$search%'
+                ORDER BY id_penjualan ASC";
+    } else {
+        $query = "SELECT penjualan.id_penjualan, barang.nama_barang,
+                        penjualan.jumlah, penjualan.total_harga,
+                        penjualan.tanggal_penjualan
+                FROM penjualan
+                LEFT JOIN barang ON penjualan.id_barang = barang.id_barang
+                ORDER BY id_penjualan ASC";
+    }
+
+    $result = mysqli_query($koneksi, $query);
 
     $penjualan = [];
-    while($row = mysqli_fetch_assoc($query)) {
-        $penjualan[] = $row;
+    if($result){
+        while ($row = mysqli_fetch_assoc($result)) {
+            $penjualan[] = $row;
+        }
     }
+
 ?>
