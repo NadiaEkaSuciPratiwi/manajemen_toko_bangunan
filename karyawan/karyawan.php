@@ -30,11 +30,13 @@
 
     <a href="create_karyawan.php" class="tambah-btn">+ Tambah Karyawan</a>
 
-    <form action="" method="GET" class="search-box">
+    <div class="search-box">
+    <form action="" method="GET">
         <input type="text" name="cari" placeholder="Cari karyawan"
                 value="<?php echo isset($_GET['cari']) ? $_GET['cari'] : ''; ?>">
     <button type="submit">Search</button>
     </form>
+    </div>
 
     <table>
         <thead>
@@ -65,6 +67,40 @@
             <?php } ?>
         </tbody>
     </table>
+
+    <!-- ✅ Pagination Bootstrap -->
+    <nav aria-label="Page navigation" style="margin-top: 20px;">
+    <ul class="pagination-custom">
+
+    <!-- Tombol Previous -->
+    <li class="page-item <?= ($page <= 1) ? 'disabled' : '' ?>">
+        <a class="page-link" 
+            href="?page=<?= $page-1 ?>&cari=<?= $_GET['cari'] ?? '' ?>">
+            Previous
+        </a>
+    </li>
+
+    <!-- Nomor Halaman -->
+    <?php for($i = 1; $i <= $total_page; $i++) { ?>
+        <li class="page-item <?= ($page == $i) ? 'active' : '' ?>">
+            <a class="page-link"
+            href="?page=<?= $i ?>&cari=<?= $_GET['cari'] ?? '' ?>">
+                <?= $i ?>
+            </a>
+        </li>
+    <?php } ?>
+
+    <!-- Tombol Next -->
+    <li class="page-item <?= ($page >= $total_page) ? 'disabled' : '' ?>">
+        <a class="page-link"
+            href="?page=<?= $page+1 ?>&cari=<?= $_GET['cari'] ?? '' ?>">
+            Next
+        </a>
+    </li>
+
+    </ul>
+    </nav>
+    
 </div>
 
 <?php include '../include/footer.php'; ?>

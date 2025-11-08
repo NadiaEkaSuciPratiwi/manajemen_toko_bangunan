@@ -153,7 +153,37 @@
 </script>
 
 <footer class="footer">
-    &copy; <?php echo date('Y') ?> Ghenadi <span>Sinar Abadi</span>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>Navigasi</h4>
+            <ul>
+                <li><a href="#hero">Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#produk">Produk</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Toko Bangunan <span>Sinar Abadi</span></h3>
+            <p>Kelola data toko dengan lebih mudah.</p>
+            <p><i class="fa-solid fa-location-dot"></i> Purwosari, Jawa Timur</p>
+            <p><i class="fa-solid fa-phone"></i> +62 821-3607-4253</p>
+        </div>
+
+        
+        <div class="footer-section">
+            <h4>Media Sosial</h4>
+            <ul class="social-links">
+                <li><a href="https://www.instagram.com/ndiaa.nadd?igsh=MWJmZDJ2NGVoZmQ2MQ=="><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                <li><a href="https://www.tiktok.com/@jovflovees?_r=1&_t=ZS-91BxlHkuIlh"><i class="fa-brands fa-tiktok"></i> Tik Tok</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; <?php echo date('Y') ?> Gheanadia <span>Sinar Abadi</span></p>
+    </div>
 </footer>
 
 </body>

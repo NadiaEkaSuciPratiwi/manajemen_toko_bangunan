@@ -37,9 +37,25 @@ $supplier = mysqli_query($koneksi, "SELECT * FROM supplier");
     <meta charset="UTF-8">
     <title>Edit Pembelian</title>
     <link rel="stylesheet" href="../css/crud_pembelian.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
 
+<?php include '../include/sidebar.php'; ?>
+
+    <div class="navbar">
+        <div class="navbar_left">
+            <h3>Pembelian</h3>
+        </div>
+        <div class="navbar-right">
+            <span> Hello, <?=$_SESSION['username'] ?> </span>
+            <a href="../beranda.php" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+  <div class="main-content">
+  
 <div class="form-container">
     <h2>Edit Pembelian</h2>
     
@@ -85,6 +101,8 @@ $supplier = mysqli_query($koneksi, "SELECT * FROM supplier");
     </form>
 
 </div>
+</div>
+<?php include '../include/footer.php'; ?>
 
 </body>
 </html>

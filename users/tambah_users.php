@@ -21,7 +21,7 @@ if (isset($_POST['simpan'])) {
     if ($result) {
         echo "<script>
                 alert('User berhasil ditambahkan!');
-                window.location='users.php';
+                window.location 'karyawan.php';
               </script>";
     } else {
         echo "<script>alert('User gagal ditambahkan!');</script>";

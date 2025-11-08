@@ -26,7 +26,19 @@ $users = mysqli_query($koneksi, "SELECT * FROM users ORDER BY username ASC");
 </head>
 
 <body>
+<?php include '../include/sidebar.php'; ?>
 
+<div class="navbar">
+        <div class="navbar_left">
+            <h3>Karyawan</h3>
+        </div>
+        <div class="navbar-right">
+            <span> Hello, <?=$_SESSION['username'] ?> </span>
+            <a href="../beranda.php" class="logout-btn">Logout</a>
+        </div>
+</div>
+
+<div class="main-content">
 <div class="form-container">
     <h2>Edit Karyawan</h2>
 
@@ -65,6 +77,9 @@ $users = mysqli_query($koneksi, "SELECT * FROM users ORDER BY username ASC");
 
     </form>
 </div>
+</div>
+
+<?php include '../include/footer.php'; ?>
 
 </body>
 </html>

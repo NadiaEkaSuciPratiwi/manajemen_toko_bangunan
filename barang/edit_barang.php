@@ -31,6 +31,20 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1 ORDER BY nama_k
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <?php include '../include/sidebar.php'; ?>
+
+    <div class="navbar">
+        <div class="navbar_left">
+            <h3>Barang</h3>
+        </div>
+        <div class="navbar-right">
+            <span> Hello, <?=$_SESSION['username'] ?> </span>
+            <a href="../beranda.php" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
     <div class="form-container">
     <h2>Edit Barang</h2>
 
@@ -81,5 +95,9 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1 ORDER BY nama_k
         <a href="barang.php" class="btn-back">Batal</a>
     </form>
     </div>
+    </div>
+
+    <?php include '../include/footer.php'; ?>
+
 </body>
 </html>

@@ -21,23 +21,33 @@ if (!isset($_SESSION['peran']) || $_SESSION['peran'] !== 'admin') {
     exit;
 }
 
-// Search Karyawan
-$search = isset($_GET['cari']) ? $_GET['cari'] : '';
+//  Pagination
+$limit = 2; // jumlah data per halaman
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$start = ($page - 1) * $limit;
 
-if($search != "") {
+// Ambil search (jika ada)
+$search = isset($_GET['cari']) ? mysqli_real_escape_string($koneksi, $_GET['cari']) : "";
+
+//  Query hitung total data
+$query_count = "SELECT COUNT(*) AS total FROM karyawan
+                JOIN users ON karyawan.id = users.id
+                WHERE karyawan.nama LIKE '%$search%' 
+                OR users.username LIKE '%$search%'
+                OR karyawan.no_telp LIKE '%$search%'";
+$result_count = mysqli_query($koneksi, $query_count);
+$row_count = mysqli_fetch_assoc($result_count);
+$total_data = $row_count['total'];
+$total_page = ceil($total_data / $limit);
+
     $query = "SELECT karyawan.*, users.username 
             FROM karyawan 
             JOIN users ON karyawan.id = users.id
             WHERE karyawan.nama LIKE '%$search%' 
                OR users.username LIKE '%$search%'
                OR karyawan.no_telp LIKE '%$search%'
-            ORDER BY id_karyawan DESC";
-} else {
-    $query = "SELECT karyawan.*, users.username 
-            FROM karyawan 
-            JOIN users ON karyawan.id = users.id
-            ORDER BY id_karyawan DESC";
-}
+            ORDER BY id_karyawan DESC
+            LIMIT $start, $limit";
 
 $result = mysqli_query($koneksi, $query);
 

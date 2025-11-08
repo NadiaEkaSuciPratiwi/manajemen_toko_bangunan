@@ -35,6 +35,19 @@ if(!$penjualan){
 
 </head>
 <body>
+<?php include '../include/sidebar.php'; ?>
+
+    <div class="navbar">
+        <div class="navbar_left">
+            <h3>Penjualan</h3>
+        </div>
+        <div class="navbar-right">
+            <span> Hello, <?=$_SESSION['username'] ?> </span>
+            <a href="../beranda.php" class="logout-btn">Logout</a>
+        </div>
+</div>
+
+<div class="main-content">
     <div class="form-container">
     <h2>Edit Penjualan</h2>
         <form action="proses_edit_penjualan.php" method="POST">
@@ -71,19 +84,22 @@ if(!$penjualan){
 
         </form>
 
-<script>
-//Auto calc total harga saat barang/jumlah berubah
-function hitungTotal() {
-    let select = document.getElementById('barangSelect');
-    let harga = select.options[select.selectedIndex].getAttribute('data-harga');
-    let jumlah = document.getElementById('jumlah').value;
+        <script>
+        //Auto calc total harga saat barang/jumlah berubah
+        function hitungTotal() {
+            let select = document.getElementById('barangSelect');
+            let harga = select.options[select.selectedIndex].getAttribute('data-harga');
+            let jumlah = document.getElementById('jumlah').value;
 
-    document.getElementById('total_harga').value = harga * jumlah;
-}
+            document.getElementById('total_harga').value = harga * jumlah;
+        }
 
-document.getElementById('barangSelect').addEventListener('change', hitungTotal);
-document.getElementById('jumlah').addEventListener('keyup', hitungTotal);
-</script>
+        document.getElementById('barangSelect').addEventListener('change', hitungTotal);
+        document.getElementById('jumlah').addEventListener('keyup', hitungTotal);
+        </script>
+    </div>
 </div>
+
+    <?php include '../include/footer.php'; ?>
 </body>
 </html>

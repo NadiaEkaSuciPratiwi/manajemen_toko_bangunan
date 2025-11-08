@@ -19,74 +19,91 @@ if(!isset($_SESSION['user_id'])){
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
-<div class="form-container">
+<body>
+  <?php include '../include/sidebar.php'; ?>
 
-<h2>Tambah Pembelian</h2>
+    <div class="navbar">
+        <div class="navbar_left">
+            <h3>Pembelian</h3>
+        </div>
+        <div class="navbar-right">
+            <span> Hello, <?=$_SESSION['username'] ?> </span>
+            <a href="../beranda.php" class="logout-btn">Logout</a>
+        </div>
+    </div>
+  <div class="main-content">
+    <div class="form-container">
 
-<?php
-// Pesan jika gagal
-if(isset($_GET['pesan']) && $_GET['pesan'] == "gagal") {
-    echo "<p style='color:red;'>Gagal menambahkan pembelian!</p>";
-}
-?>
+    <h2>Tambah Pembelian</h2>
 
-<form action="proses_tambah_pembelian.php" method="POST">
-
-    <label>Supplier</label>
-    <select name="id_supplier" required>
     <?php
-    include '../koneksi.php';
-    $data = mysqli_query($koneksi, "SELECT * FROM supplier");
-    while ($d = mysqli_fetch_array($data)) {
-        echo "<option value='".$d['id_supplier']."'>".$d['nama_supplier']."</option>";
+    // Pesan jika gagal
+    if(isset($_GET['pesan']) && $_GET['pesan'] == "gagal") {
+        echo "<p style='color:red;'>Gagal menambahkan pembelian!</p>";
     }
     ?>
-    </select>
 
-    <label>Barang</label>
-    <select name="id_barang" required>
-    <?php
-    include '../koneksi.php';
-    $data = mysqli_query($koneksi, "SELECT * FROM barang");
-    while ($d = mysqli_fetch_array($data)) {
-        echo "<option value='".$d['id_barang']."'>".$d['nama_barang']."</option>";
-    }
-    ?>
-    </select>
+    <form action="proses_tambah_pembelian.php" method="POST">
+
+        <label>Supplier</label>
+        <select name="id_supplier" required>
+        <?php
+        include '../koneksi.php';
+        $data = mysqli_query($koneksi, "SELECT * FROM supplier");
+        while ($d = mysqli_fetch_array($data)) {
+            echo "<option value='".$d['id_supplier']."'>".$d['nama_supplier']."</option>";
+        }
+        ?>
+        </select>
+
+        <label>Barang</label>
+        <select name="id_barang" required>
+        <?php
+        include '../koneksi.php';
+        $data = mysqli_query($koneksi, "SELECT * FROM barang");
+        while ($d = mysqli_fetch_array($data)) {
+            echo "<option value='".$d['id_barang']."'>".$d['nama_barang']."</option>";
+        }
+        ?>
+        </select>
 
 
-    <label>Jumlah</label>
-    <input type="number" name="jumlah" required>
+        <label>Jumlah</label>
+        <input type="number" name="jumlah" required>
 
-    <label>Harga Beli</label>
-    <input type="number" name="harga_beli" required>
+        <label>Harga Beli</label>
+        <input type="number" name="harga_beli" required>
 
-    <label>Total Harga</label>
-    <input type="number" name="total_harga" readonly>
+        <label>Total Harga</label>
+        <input type="number" name="total_harga" readonly>
 
-    <label>Tanggal Pembelian</label>
-    <input type="date" name="tanggal_pembelian" required>
+        <label>Tanggal Pembelian</label>
+        <input type="date" name="tanggal_pembelian" required>
 
-    <button type="submit" class="btn-update">Simpan</button>
-    <a href="pembelian.php" class="btn-back">Batal</a>
-</form>
+        <button type="submit" class="btn-update">Simpan</button>
+        <a href="pembelian.php" class="btn-back">Batal</a>
+    </form>
 
-    <script>
-    const jumlahInput = document.querySelector('input[name="jumlah"]');
-    const hargaInput = document.querySelector('input[name="harga_beli"]');
-    const totalInput = document.querySelector('input[name="total_harga"]');
+        <script>
+        const jumlahInput = document.querySelector('input[name="jumlah"]');
+        const hargaInput = document.querySelector('input[name="harga_beli"]');
+        const totalInput = document.querySelector('input[name="total_harga"]');
 
-    function hitungTotal() {
-        const jumlah = parseFloat(jumlahInput.value) || 0;
-        const harga = parseFloat(hargaInput.value) || 0;
-        const total = jumlah * harga;
-        totalInput.value = total;
-    }
+        function hitungTotal() {
+            const jumlah = parseFloat(jumlahInput.value) || 0;
+            const harga = parseFloat(hargaInput.value) || 0;
+            const total = jumlah * harga;
+            totalInput.value = total;
+        }
 
-    jumlahInput.addEventListener("input", hitungTotal);
-    hargaInput.addEventListener("input", hitungTotal);
-    </script>
+        jumlahInput.addEventListener("input", hitungTotal);
+        hargaInput.addEventListener("input", hitungTotal);
+        </script>
 
+    </div>
 </div>
+
+    <?php include '../include/footer.php'; ?>
+
 </body>
 </html>

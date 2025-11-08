@@ -18,7 +18,20 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1");
 
 </head>
 <body>
-<div class="form-container">
+    <?php include '../include/sidebar.php'; ?>
+
+    <div class="navbar">
+        <div class="navbar_left">
+            <h3>Barang</h3>
+        </div>
+        <div class="navbar-right">
+            <span> Hello, <?=$_SESSION['username'] ?> </span>
+            <a href="../beranda.php" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+    <div class="form-container">
     <h2>Tambah Barang</h2>
     
     <form action="proses_tambah_barang.php" method="POST" enctype="multipart/form-data">
@@ -50,7 +63,10 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1");
         <button type="submit" class="btn-update">Simpan</button>
         <a href="barang.php" class="btn-back">Batal</a>
     </form>
-</div>
+    </div>
+    </div>
     
+    <?php include '../include/footer.php'; ?>
+
 </body>
 </html>

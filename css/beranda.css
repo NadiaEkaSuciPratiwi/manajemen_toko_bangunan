@@ -83,18 +83,20 @@ body{
     align-items: center;
     text-align: center;
     color: #fff;
-    padding: 70px 80px;
+    padding: 70px 60px;
     box-sizing: border-box;
 }
 
 .hero-content{
     max-width: 50%;
     color: #1e3d59;
+    text-align: center;
 }
 
 .hero-content h2{
     font-size: 38px;
     line-height: 1.2;
+    text-align: center;
 }
 
 .hero-content span{
@@ -103,9 +105,11 @@ body{
 
 .hero-content p{
     font-size: 18px;
-    margin: 20px 0 30px;
+    margin: 20px 40px 30px;
     color: #333;
     max-width: 500px;
+    text-align: center;
+    justify-content: center;
 }
 
 .hero-img img{
@@ -200,10 +204,10 @@ body{
 }
 
 .card i {
-    font-size: 35px;
+    font-size: 50px;
     margin-bottom: 5px;
     margin-top: 10px;
-    color: #f5c518; 
+    color: #3205ac; 
 }
 
 
@@ -260,11 +264,75 @@ body{
 .footer{
     background-color: #295c8a;
     color: #fff;
+    padding: 50px 0 10px;
+    font-size: 16px;
     text-align: center;
-    padding: 15px 0px;
-    font-size: 14px;
 }
 
 .footer span {
     color: #f5c518;
+}
+
+.footer-container {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10%;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li{
+    margin: 6px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-section ul li a:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #f5c518; 
+}
+
+.social-links a {
+  font-size: 15px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-links i {
+    font-size: 20px;
+    color: #fff;
+}
+
+.social-media a:hover {
+  color: #f5c518; 
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    opacity: 0.9;
+    text-align: center;
+    font-size: 14px;
 }

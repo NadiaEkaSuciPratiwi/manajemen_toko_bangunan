@@ -44,6 +44,19 @@ if(isset($_POST['submit'])){
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <div>
+    <?php include '../include/sidebar.php'; ?>
+
+    <div class="navbar">
+        <div class="navbar_left">
+            <h3>Penjualan</h3>
+        </div>
+        <div class="navbar-right">
+            <span> Hello, <?=$_SESSION['username'] ?> </span>
+            <a href="../beranda.php" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
     <div class="form-container">
     <h2>Tambah Penjualan</h2>
     <form method="POST" action="">
@@ -94,5 +107,8 @@ if(isset($_POST['submit'])){
         });
     </script>
     </div>
+    </div>
+    <?php include '../include/footer.php'; ?>
+    
 </body>
 </html>

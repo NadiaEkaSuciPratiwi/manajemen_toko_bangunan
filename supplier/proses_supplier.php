@@ -8,16 +8,26 @@ if(!isset($_SESSION['user_id'])){
     exit;
 }
 
-//Ambil data supplier 
-$search = isset($_GET['cari']) ? $_GET['cari'] : '';
+//  Pagination
+$limit = 2; // jumlah data per halaman
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$start = ($page - 1) * $limit;
 
-if($search != "") {
-    $query = "SELECT  * FROM supplier
+// Ambil search (jika ada)
+$search = isset($_GET['cari']) ? mysqli_real_escape_string($koneksi, $_GET['cari']) : "";
+
+//  Query hitung total data
+$query_count = "SELECT COUNT(*) AS total FROM supplier
+                WHERE supplier.nama_supplier LIKE '%$search%'";
+$result_count = mysqli_query($koneksi, $query_count);
+$row_count = mysqli_fetch_assoc($result_count);
+$total_data = $row_count['total'];
+$total_page = ceil($total_data / $limit);
+
+$query = "SELECT  * FROM supplier
             WHERE supplier.nama_supplier LIKE '%$search%'
-            ORDER BY id_supplier DESC";
-} else {
-    $query = "SELECT * FROM supplier ORDER BY id_supplier DESC";
-}
+            ORDER BY id_supplier DESC
+            LIMIT $start, $limit";
 
 $result = mysqli_query($koneksi, $query);
 
