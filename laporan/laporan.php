@@ -2,12 +2,6 @@
 session_start();
 include '../koneksi.php';
 
-// Cek login + role admin
-if (!isset($_SESSION['user_id']) || $_SESSION['peran'] !== 'admin') {
-    echo "<script>alert('Akses ditolak!'); window.location='../dashboard/dashboard.php';</script>";
-    exit;
-}
-
 $hasil = [];
 $totalHarga = 0;
 

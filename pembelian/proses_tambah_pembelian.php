@@ -20,7 +20,7 @@ $tanggal = $_POST['tanggal_pembelian'];
 $query = "INSERT INTO pembelian (id_supplier, id_barang, jumlah, harga_beli, total_harga, tanggal_pembelian) 
           VALUES ('$supplier', '$barang', '$jumlah', '$harga_beli', '$total_harga', '$tanggal')";
 
-if($insert){
+if($query){
     echo "<script>alert('Data pembelian berhasil ditambahkan');window.location='pembelian.php';</script>";
     } else {
     echo "Gagal menambahkan data: " . mysqli_error($koneksi);

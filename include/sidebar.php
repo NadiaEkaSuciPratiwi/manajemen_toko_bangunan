@@ -1,3 +1,6 @@
+<?php 
+include '../koneksi.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +16,12 @@
         <h2>Sinar Abadi</h2> 
         <ul>
             <li><a href="../dashboard/dashboard.php">Dashboard</a></li>
-            <li><a href="../karyawan/karyawan.php">Karyawan</a></li>
-            <li><a href="../supplier/supplier.php">Supplier</a></li>
+            
+            <?php if($_SESSION['peran'] == 'admin') { ?>
+                <li><a href="../karyawan/karyawan.php">Karyawan</a></li>
+                <li><a href="../supplier/supplier.php">Supplier</a></li>
+            <?php } ?>
+
             <li><a href="../penjualan/penjualan.php">Penjualan</a></li>
             <li><a href="../pembelian/pembelian.php">Pembelian</a></li>
             <li><a href="../barang/barang.php">Barang</a></li>
