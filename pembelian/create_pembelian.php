@@ -46,7 +46,7 @@ if(!isset($_SESSION['user_id'])){
     <form action="proses_tambah_pembelian.php" method="POST">
 
         <label>Supplier</label>
-        <select name="id_supplier" required>
+        <select name="id_supplier">
         <?php
         include '../koneksi.php';
         $data = mysqli_query($koneksi, "SELECT * FROM supplier");
@@ -55,9 +55,12 @@ if(!isset($_SESSION['user_id'])){
         }
         ?>
         </select>
+        <?php if(isset($_GET['error']) && $_GET['error'] == "id_supplier"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+        <?php endif; ?>
 
         <label>Barang</label>
-        <select name="id_barang" required>
+        <select name="id_barang">
         <?php
         include '../koneksi.php';
         $data = mysqli_query($koneksi, "SELECT * FROM barang");
@@ -66,19 +69,34 @@ if(!isset($_SESSION['user_id'])){
         }
         ?>
         </select>
+        <?php if(isset($_GET['error']) && $_GET['error'] == "id_barang"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+        <?php endif; ?>
 
 
         <label>Jumlah</label>
-        <input type="number" name="jumlah" required>
+        <input type="number" name="jumlah">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "jumlah"): ?>
+            <div class="text-danger small">Semua field wajib di isi dengan benar!</div>
+        <?php endif; ?>
 
         <label>Harga Beli</label>
-        <input type="number" name="harga_beli" required>
+        <input type="number" name="harga_beli">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "harga_beli"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+        <?php endif; ?>
 
         <label>Total Harga</label>
         <input type="number" name="total_harga" readonly>
+        <?php if(isset($_GET['error']) && $_GET['error'] == "total_harga"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+        <?php endif; ?>
 
         <label>Tanggal Pembelian</label>
-        <input type="date" name="tanggal_pembelian" required>
+        <input type="date" name="tanggal_pembelian">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "tanggal_pembelian"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+        <?php endif; ?>
 
         <button type="submit" class="btn-update">Simpan</button>
         <a href="pembelian.php" class="btn-back">Batal</a>

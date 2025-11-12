@@ -61,7 +61,7 @@ if (isset($_GET['filter'])) {
     </form>
 
     <?php if(count($hasil) > 0) { ?>
-        <a href="export_excel.php">Unduh Laporan</a>
+        <a href="export_excel.php" class="unduh">Unduh Laporan</a>
 
         <table>
             <thead>

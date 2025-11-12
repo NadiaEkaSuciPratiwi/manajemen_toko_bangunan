@@ -3,6 +3,7 @@ body {
     font-family: Poppins, sans-serif;
     background-color: #f4f6f8;
     min-height: 80vh;
+    overflow-x: hidden;
 }
 
 .navbar{
@@ -138,3 +139,8 @@ body {
     background: #d4a915;
 }
 
+.text-danger.small {
+    font-size: 13px;
+    margin-top: 3px;
+    color: #ff4646;
+}

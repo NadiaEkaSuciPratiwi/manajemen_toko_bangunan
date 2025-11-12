@@ -16,7 +16,7 @@ body{
 
 .sidebar h2{
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #f5c518;
     padding-bottom: 8px;
     border-bottom: 1px solid #f5c518;
@@ -28,14 +28,14 @@ body{
 }
 
 .sidebar ul li{
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
 .sidebar ul li a{
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 15px;
+    padding: 8px 12px;
     display: block;
     transition: backround-color 0.3s;
     border-radius: 8px;

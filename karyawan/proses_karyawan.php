@@ -46,7 +46,7 @@ $total_page = ceil($total_data / $limit);
             WHERE karyawan.nama LIKE '%$search%' 
                OR users.username LIKE '%$search%'
                OR karyawan.no_telp LIKE '%$search%'
-            ORDER BY id_karyawan DESC
+            ORDER BY id_karyawan ASC
             LIMIT $start, $limit";
 
 $result = mysqli_query($koneksi, $query);

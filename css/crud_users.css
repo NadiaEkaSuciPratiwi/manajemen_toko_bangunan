@@ -7,6 +7,7 @@ body {
     min-height: 70vh;
     padding-top: 80px;
     padding-bottom: 80px;
+    overflow-x: hidden;
 }
 
 .form-container {

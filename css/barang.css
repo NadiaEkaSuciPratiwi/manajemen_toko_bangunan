@@ -10,6 +10,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .navbar{
@@ -96,6 +97,7 @@ img {
     text-decoration: none;
     border-radius: 10px;
     transition: 0.3s;
+    margin-bottom: 30px;
 }
 
 .tambah-btn:hover{
@@ -123,14 +125,20 @@ img {
     margin-left: 250px;
     padding: 20px;
     margin-top: 30px;
+    min-width: 90vh;
 }
 
 .search-box {
-    width: 25%;
+    width: 30%;
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
-    margin-top: 15px;
+    margin-top: 30px;
+    text-align: right;
+    float: right;
+    justify-content: flex-end;
+    margin-top: 70px;
+    position: relative;
 }
 
 .search-box input,
@@ -162,6 +170,42 @@ img {
     background: #f5c518;
 }
 
+.filter-barang {
+    display: flex;
+    gap: 10px;
+    align-items: center;            
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.filter-barang select,
+.filter-barang input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filter-barang input:focus,
+.filter-barang select:focus{
+    border-color: #f9c300 !important;
+    outline: none !important;
+    box-shadow: 0 0 6px rgba(249,195,0,0.4) !important;
+}
+
+.filter-barang button{
+    padding: 8px 16px;
+    background: #ecc648;
+    border: none;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.filter-barang button:hover {
+    background: #f5c518;
+}
+
+
 /* pagination-custom: style ringan mirip bootstrap, tidak memuat bootstrap */
 .pagination-custom {
   display: flex;
@@ -171,6 +215,7 @@ img {
   gap: 4px;
   justify-content: left;
   margin-top: 18px;
+
 }
 
 .pagination-custom .page-item {
@@ -210,3 +255,40 @@ img {
   background: #e9f2ff;
   text-decoration: none;
 }
+
+/* === Tombol Tampilkan === */
+button,
+input[type="submit"] {
+    background-color: #ffc107; /* warna kuning seperti tombol login */
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #e0a800; /* sedikit lebih gelap saat hover */
+}
+
+/* === Link Unduh Laporan === */
+a.unduh {
+    display: inline-block;
+    background-color: #007bff; /* biru agar kontras */
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+a.unduh:hover {
+    background-color: #0056b3;
+}
+

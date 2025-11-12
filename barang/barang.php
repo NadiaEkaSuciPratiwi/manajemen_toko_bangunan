@@ -29,9 +29,12 @@
 <div class="content">
     <h2>Data Barang</h2>
 
-    <a href="create_barang.php" class="tambah-btn">+ Tambah Barang</a><br>
+    <?php if($_SESSION['peran'] == "admin"){ ?>
+    <li> <a href="create_barang.php" class="tambah-btn">+ Tambah Barang</a><br></li>
+    <?php } ?>
 
-    <form method="GET" action="" class="search-box">
+    <div class="filter-barang">
+    <form method="GET" action="">
     <input type="text" name="cari" placeholder="Cari nama barang" 
            value="<?= isset($_GET['cari']) ? $_GET['cari'] : '' ?>">
 
@@ -50,7 +53,7 @@
 
     <button type="submit">Filter</button>
     </form>
-
+    </div>
 
     <table>
         <thead>

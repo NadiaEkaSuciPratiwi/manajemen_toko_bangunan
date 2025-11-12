@@ -16,6 +16,23 @@ if(isset($_POST['submit'])){
     $jumlah = $_POST['jumlah'];
     $tanggal = $_POST['tanggal_penjualan'];
 
+    $error = "";
+
+    if ($id_barang == "") {
+        $error = "id_barang";
+    } elseif ($jumlah <= 0) {
+        $error = "jumlah";
+    } elseif ($harga_satuan <= 0) {
+        $error = "harga";
+    } elseif ($tanggal == "") {
+        $error = "tanggal_penjualan";
+    }
+
+if($error != ""){
+    header("Location: create_penjualan.php?error=$error");
+    exit;
+}
+
     // Ambil harga satuan dari tabel barang
     $barang = mysqli_query($koneksi, "SELECT harga FROM barang WHERE id_barang='$id_barang'");
     $b = mysqli_fetch_assoc($barang);
@@ -61,28 +78,42 @@ if(isset($_POST['submit'])){
     <h2>Tambah Penjualan</h2>
     <form method="POST" action="">
         <label>Nama Barang:</label>
-        <select name="id_barang" id="barang" required>
+        <select name="id_barang" id="barang">
             <option value="">-- Pilih Barang --</option>
             <?php while($row = mysqli_fetch_assoc($queryBarang)): ?>
                 <option value="<?= $row['id_barang']; ?>" data-harga="<?= $row['harga']; ?>"><?= $row['nama_barang']; ?></option>
             <?php endwhile; ?>
         </select>
-        <br><br>
+        <?php if(isset($_GET['error']) && $_GET['error'] == "id_barang"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+            <?php endif; ?><br><br>
 
         <label>Harga Satuan:</label>
         <input type="text" id="harga_satuan" readonly>
+        <?php if(isset($_GET['error']) && $_GET['error'] == "harga_satuan"): ?>
+            <div class="text-danger small">Harga harus lebih dari 0!</div>
+            <?php endif; ?>
         <br><br>
 
         <label>Jumlah:</label>
-        <input type="number" name="jumlah" id="jumlah" min="1" required>
+        <input type="number" name="jumlah" id="jumlah" min="1">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "jumlah"): ?>
+            <div class="text-danger small">Jumlah harus lebih dari 0!</div>
+            <?php endif; ?>
         <br><br>
 
         <label>Total Harga:</label>
         <input type="text" id="total_harga" readonly>
+        <?php if(isset($_GET['error']) && $_GET['error'] == "total_harga"): ?>
+            <div class="text-danger small">Total harga harus lebih dari 0!</div>
+            <?php endif; ?>
         <br><br>
 
         <label>Tanggal Penjualan:</label>
-        <input type="date" name="tanggal_penjualan" required>
+        <input type="date" name="tanggal_penjualan">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "tanggal_penjualan"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+            <?php endif; ?>
         <br><br>
 
         <button type="submit" name="submit" class="btn-update">Simpan</button>

@@ -1,11 +1,7 @@
 <?php
 include '../koneksi.php';
 
-// cek login
-if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login/login.php");
-    exit;
-}
+
 
 $id   = $_POST['id_supplier'];
 $nama = $_POST['nama_supplier'];
@@ -19,6 +15,10 @@ $query = "UPDATE supplier SET
           WHERE id_supplier=$id";
 mysqli_query($koneksi, $query);
 
-header("Location: supplier.php");
-exit;
+if($query){
+    echo "<script>alert('Data berhasil diubah');window.location='supplier.php';</script>";
+    } else {
+    echo "Gagal megubah data: " . mysqli_error($koneksi);
+    }
+
 ?>

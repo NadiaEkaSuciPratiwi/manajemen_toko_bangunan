@@ -3,6 +3,7 @@ body {
     font-family: Poppins, sans-serif;
     background-color: #f4f6f8;
     min-height: 80vh;
+    overflow-x: hidden;
 }
 
 .navbar{
@@ -176,4 +177,10 @@ input[type="file"]:focus{
     border-radius: 6px;
     border: 1px solid #ccc;
     margin-top: 8px;
+}
+
+.text-danger.small {
+    font-size: 13px;
+    margin-top: 3px;
+    color: #ff4646;
 }

@@ -32,13 +32,22 @@
 <h2>Tambah Supplier</h2>
 <form action="proses_create_supplier.php" method="POST">
     <label>Nama Supplier</label><br>
-    <input type="text" name="nama_supplier" required><br>
+    <input type="text" name="nama_supplier">
+    <?php if(isset($_GET['error']) && $_GET['error'] == "nama_supplier"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+    <?php endif; ?><br>
 
     <label>Alamat</label><br>
-    <input type="text" name="alamat" required><br>
+    <input type="text" name="alamat">
+    <?php if(isset($_GET['error']) && $_GET['error'] == "alamat"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+    <?php endif; ?><br>
 
     <label>No Telepon</label><br>
-    <input type="text" name="no_telpon" required><br>
+    <input type="text" name="no_telpon">
+    <?php if(isset($_GET['error']) && $_GET['error'] == "no_telpon"): ?>
+            <div class="text-danger small">Nomor tidak boleh lebih dari 12 digit!</div>
+    <?php endif; ?><br>
 
     <button type="submit" class="btn-update">Simpan</button>
     <a href="supplier.php" class="btn-back">Batal</a>

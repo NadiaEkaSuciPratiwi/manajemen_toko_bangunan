@@ -46,6 +46,7 @@
                 <th>Jabatan</th>
                 <th>Alamat</th>
                 <th>No Telpon</th>
+                <th>Foto</th>
                 <th>Tanggal Join</th>
                 <th>Aksi</th>
             </tr>
@@ -57,7 +58,15 @@
                 <td><?= $row['nama'] ?></td>
                 <td><?= $row['jabatan'] ?></td>
                 <td><?= $row['alamat'] ?></td>              
-                <td><?= $row['no_telp'] ?></td>               
+                <td><?= $row['no_telp'] ?></td> 
+                <td>
+                <?php if (!empty($row['foto']) && file_exists("profil/" . $row['foto'])): ?>
+                    <img src="profil/<?= htmlspecialchars($row['foto']); ?>" width="100" height="80" style=" border-radius: 10%;">
+                <?php else: ?>
+                    <img src="profil/" width="100" height="80" style="border-radius: 50%;">
+                <?php endif; ?>
+                </td>
+       
                 <td><?= formatTanggal($row['tanggal_join']) ?></td>               
                 <td class="aksi-btn">
                         <a href="edit_karyawan.php?id=<?= $row['id_karyawan'] ?>" class="edit">Edit</a>

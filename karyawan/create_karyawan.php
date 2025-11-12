@@ -5,6 +5,9 @@ include '../koneksi.php';
 // Ambil data user
 $userQuery = mysqli_query($koneksi, "SELECT * FROM users ORDER BY username ASC");
 
+// Ambil ID user baru dari URL (kalau baru saja dibuat)
+$id_user_terpilih = isset($_GET['id_user_baru']) ? $_GET['id_user_baru'] : '';
+?>
 ?>
 
 <!DOCTYPE html>
@@ -19,20 +22,21 @@ $userQuery = mysqli_query($koneksi, "SELECT * FROM users ORDER BY username ASC")
 <?php include '../include/sidebar.php'; ?>
 
 <div class="navbar">
-        <div class="navbar_left">
-            <h3>Karyawan</h3>
-        </div>
-        <div class="navbar-right">
-            <span> Hello, <?=$_SESSION['username'] ?> </span>
-            <a href="../beranda.php" class="logout-btn">Logout</a>
-        </div>
+    <div class="navbar_left">
+        <h3>Karyawan</h3>
+    </div>
+    <div class="navbar-right">
+        <span>Hello, <?= $_SESSION['username'] ?></span>
+        <a href="../beranda.php" class="logout-btn">Logout</a>
+    </div>
 </div>
 
 <div class="main-content">
 <div class="form-container">
     <h2>Tambah Karyawan</h2>
 
-    <form action="proses_tambah_karyawan.php" method="POST">
+    <!-- enctype penting agar bisa upload foto -->
+    <form action="proses_tambah_karyawan.php" method="POST" enctype="multipart/form-data">
 
         <label for="id">Pilih User</label>
         <select name="id" required>
@@ -44,28 +48,53 @@ $userQuery = mysqli_query($koneksi, "SELECT * FROM users ORDER BY username ASC")
             <?php endwhile; ?>
         </select>
 
+        <?php if(isset($_GET['error']) && $_GET['error'] == "id"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+        <?php endif; ?>
+
         <br><br>
         <a href="../users/tambah_users.php" class="btn-user" style="margin-bottom: 15px;">
             + Tambah User Baru
         </a>
 
         <br><br>
+
         <label>Nama Karyawan</label>
-        <input type="text" name="nama" required>
+        <input type="text" name="nama">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "nama"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+        <?php endif; ?>
 
         <label>Jabatan</label>
-        <input type="text" name="jabatan" required>
+        <input type="text" name="jabatan">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "jabatan"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+        <?php endif; ?>
 
         <label>No Telpon</label>
-        <input type="text" name="no_telp" required>
+        <input type="text" name="no_telp">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "no_telp"): ?>
+            <div class="text-danger small">Nomor tidak boleh lebih dari 13 digit!</div>
+        <?php endif; ?>
 
         <label>Alamat</label>
-        <textarea name="alamat" required></textarea>
+        <textarea name="alamat"></textarea>
+        <?php if(isset($_GET['error']) && $_GET['error'] == "alamat"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+        <?php endif; ?>
 
-        
         <label>Tanggal Join</label>
-        <input type="date" name="tanggal_join" required>
+        <input type="date" name="tanggal_join">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "tanggal_join"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+        <?php endif; ?>
 
+        <!-- Foto Profil -->
+        <label>Foto Profil (opsional)</label>
+        <input type="file" name="foto" accept=".jpg,.jpeg,.png,.gif">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "foto"): ?>
+            <div class="text-danger small">Format file tidak didukung! (Gunakan JPG, PNG, atau GIF)</div>
+        <?php endif; ?>
 
         <button type="submit" class="btn-update">Simpan</button>
         <a href="karyawan.php" class="btn-back">Batal</a>

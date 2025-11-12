@@ -24,6 +24,7 @@ include '../koneksi.php';
 
             <li><a href="../penjualan/penjualan.php">Penjualan</a></li>
             <li><a href="../pembelian/pembelian.php">Pembelian</a></li>
+            <li><a href="../users/detail_users.php">Detail Users</a></li>
             <li><a href="../barang/barang.php">Barang</a></li>
             <li><a href="../laporan/laporan.php">Laporan</a></li>
         </ul>

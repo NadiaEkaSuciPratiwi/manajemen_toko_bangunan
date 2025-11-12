@@ -34,15 +34,18 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1");
     <div class="form-container">
     <h2>Tambah Barang</h2>
     
-    <form action="proses_tambah_barang.php" method="POST" enctype="multipart/form-data">
+    <form action="proses_tambah_barang.php" method="POST" enctype="multipart/form-data" novalidate>
         <label>Nama Barang:</label>
-        <input type="text" name="nama_barang" required>
+        <input type="text" name="nama_barang" >
+        <?php if(isset($_GET['error']) && $_GET['error'] == "nama_barang"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+            <?php endif; ?>
 
         <label>Foto:</label>
-        <input type="file" name="foto" accept="image/*" required>
+        <input type="file" name="foto" accept="image/*" >
 
         <label>Kategori:</label>
-        <select name="id_kategori" required>
+        <select name="id_kategori" >
         <option value="">-- Pilih Kategori --</option>
         <?php while ($row = mysqli_fetch_assoc($queryKategori)) : ?>
             <option value="<?= $row['id_kategori']; ?>">
@@ -50,15 +53,27 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1");
             </option>
         <?php endwhile; ?>
         </select>
+        <?php if(isset($_GET['error']) && $_GET['error'] == "id_kategori"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+            <?php endif; ?>
 
         <label>Satuan:</label>
-        <input type="text" name="satuan" required>
+        <input type="text" name="satuan" >
+        <?php if(isset($_GET['error']) && $_GET['error'] == "satuan"): ?>
+            <div class="text-danger small">Semua field wajib diisi!</div>
+            <?php endif; ?>
 
         <label>Harga:</label>
-        <input type="number" name="harga" required>
+        <input type="number" name="harga">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "harga"): ?>
+            <div class="text-danger small">Harga jual harus lebih dari 0!</div>
+            <?php endif; ?>
 
         <label>Stok:</label>
-        <input type="number" name="stok" required>
+        <input type="number" name="stok">
+        <?php if(isset($_GET['error']) && $_GET['error'] == "stok"): ?>
+            <div class="text-danger small">Stok harus lebih dari 0!</div>
+            <?php endif; ?>
 
         <button type="submit" class="btn-update">Simpan</button>
         <a href="barang.php" class="btn-back">Batal</a>

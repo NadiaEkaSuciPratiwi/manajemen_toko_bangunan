@@ -2,29 +2,38 @@
 session_start();
 include '../koneksi.php';
 
-if(!isset($_SESSION['user_id'])){
+if (!isset($_SESSION['user_id'])) {
     header("Location: ../login/login.php");
     exit;
-} 
+}
 
-// Cek saat tombol submit ditekan
+// Saat tombol submit ditekan
 if (isset($_POST['simpan'])) {
     $username = $_POST['username'];
-    $password = $_POST['password']; 
-    $role = $_POST['peran'];
+    $password = $_POST['password'];
+    $peran = $_POST['peran'];
 
-    // Query simpan user
-    $query = "INSERT INTO users (username, password, peran) 
-              VALUES ('$username', '$password', '$role')";
+    // Validasi sederhana
+    if (empty($username) || empty($password) || empty($peran)) {
+        echo "<script>alert('Semua field wajib diisi!'); window.history.back();</script>";
+        exit;
+    }
+
+    // Simpan ke database
+    $query = "INSERT INTO users (username, password, peran)
+              VALUES ('$username', '$password', '$peran')";
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {
         echo "<script>
                 alert('User berhasil ditambahkan!');
-                window.location 'karyawan.php';
+                window.location = '../karyawan/create_karyawan.php';
               </script>";
     } else {
-        echo "<script>alert('User gagal ditambahkan!');</script>";
+        echo "<script>
+                alert('Gagal menambah user: " . mysqli_error($koneksi) . "');
+                window.history.back();
+              </script>";
     }
 }
 ?>
@@ -43,22 +52,21 @@ if (isset($_POST['simpan'])) {
     <h2>Tambah User</h2>
 
     <form action="" method="POST">
-
         <label>Username</label>
         <input type="text" name="username" required>
 
         <label>Password</label>
-        <input type="text" name="password" required>
+        <input type="password" name="password" required>
 
-        <label>Role</label>
-        <select name="role" required>
-            <option value="">-- Pilih Role --</option>
+        <label>Peran</label>
+        <select name="peran" required>
+            <option value="">-- Pilih Peran --</option>
             <option value="admin">Admin</option>
             <option value="karyawan">Karyawan</option>
         </select>
 
         <button type="submit" name="simpan" class="btn-update">Simpan</button>
-        <a href="user.php" class="btn-back">Batal</a>
+        <a href="../karyawan/create_karyawan.php" class="btn-back">Batal</a>
     </form>
 </div>
 
