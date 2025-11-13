@@ -2,7 +2,6 @@
 include '../koneksi.php';
 
 
-
 $id   = $_POST['id_supplier'];
 $nama = $_POST['nama_supplier'];
 $alamat = $_POST['alamat'];

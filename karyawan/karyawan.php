@@ -20,9 +20,31 @@
             <h3>Karyawan</h3>
         </div>
         <div class="navbar-right">
-            <span> Hello, <?=$_SESSION['username'] ?> </span>
-            <a href="../beranda.php" class="logout-btn">Logout</a>
+            <span>Hello, <?php echo $_SESSION['username']; ?></span>
+
+        <div class="profile-dropdown">
+        <img src="<?php echo $foto; ?>" class="profile-photo" onclick="toggleDropdown()">
+
+        <ul id="dropdownMenu" class="dropdown-content">
+            <li><a href="../beranda.php" class="dropdown-logout">Logout</a></li>
+        </ul>
         </div>
+
+    </div>
+
+    <script>
+    function toggleDropdown() {
+        const menu = document.getElementById('dropdownMenu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function(e) {
+        const dd = document.querySelector('.profile-dropdown');
+        if (!dd.contains(e.target)) {
+            document.getElementById('dropdownMenu').style.display = 'none';
+        }
+    });
+    </script>
     </div>
 
     <div class="content">

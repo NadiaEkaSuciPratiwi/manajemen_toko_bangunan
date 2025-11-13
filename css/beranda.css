@@ -336,3 +336,122 @@ body{
     text-align: center;
     font-size: 14px;
 }
+
+.lihat-semua {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-lihat-semua {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-lihat-semua:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.container h2{
+    color: #1e3d59;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.filter-barang {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-barang form {
+    display: inline-block;
+}
+
+.filter-barang input, 
+.filter-barang select, 
+.filter-barang button {
+    padding: 8px 12px;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.filter-barang input:focus, 
+.filter-barang select:focus{
+    border-color: #f9c300 !important;
+    outline: none !important;
+    box-shadow: 0 0 6px rgba(249,195,0,0.4) !important;
+}
+
+.filter-barang button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-barang button:hover {
+    background-color: #0056b3;
+}
+
+.pagination-custom {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  gap: 4px;
+  justify-content: center;
+  margin-top: 30px;
+
+}
+
+.pagination-custom .page-item {
+  display: inline;
+}
+
+.pagination-custom .page-link {
+  position: relative;
+  display: block;
+  padding: 4px 8px;
+  text-decoration: none;
+  border: 1px solid #dee2e6;
+  color: #0d6efd;
+  border-radius: 6px;
+  background: #fff;
+  min-width: 44px;
+  text-align: center;
+}
+
+/* active */
+.pagination-custom .page-item.active .page-link {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
+
+/* disabled */
+.pagination-custom .page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  background: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+/* hover */
+.pagination-custom .page-link:hover {
+  background: #e9f2ff;
+  text-decoration: none;
+}

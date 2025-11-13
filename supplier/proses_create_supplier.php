@@ -7,6 +7,7 @@ if(!isset($_SESSION['user_id'])){
     exit;
 }
 
+
 $nama = $_POST['nama_supplier'];
 $alamat = $_POST['alamat'];
 $no = $_POST['no_telpon'];

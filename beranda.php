@@ -98,11 +98,10 @@
 
 <section class="produk-terbaru" id="produk">
     <h2>Produk Terbaru</h2>
-
     <div class="produk-container">
         <?php
         include 'koneksi.php';
-        $query = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id_barang DESC LIMIT 5");
+        $query = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id_barang DESC LIMIT 4");
 
         while($data = mysqli_fetch_assoc($query)) {
         ?>
@@ -112,6 +111,10 @@
                 <p>Rp <?php echo number_format($data['harga'],0,',','.'); ?></p>
             </div>
         <?php } ?>
+        <div class="lihat-semua">
+            <a href="all_produk/semua_produk.php" class="btn-lihat-semua">Lihat Semua Produk</a>
+        </div>
+
     </div>
 </section>
 

@@ -8,6 +8,22 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+// Ambil foto profil dari tabel karyawan
+    $id_user = $_SESSION['user_id'];
+
+    $ambilFoto = mysqli_query($koneksi, "
+                SELECT foto 
+                FROM karyawan
+                WHERE id = '$id_user'
+    ");
+
+    $dataUser = mysqli_fetch_assoc($ambilFoto);
+
+    // Path foto profil
+    $foto = (!empty($dataUser['foto'])) 
+        ? "profil/" . $dataUser['foto']  
+        : "";
+
 // Fungsi format tanggal
     function formatTanggal($tanggal_join){
 
