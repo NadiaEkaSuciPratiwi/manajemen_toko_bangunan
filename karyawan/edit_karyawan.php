@@ -133,6 +133,5 @@ $users = mysqli_query($koneksi, "SELECT * FROM users ORDER BY username ASC");
 </div>
 </div>
 
-<?php include '../include/footer.php'; ?>
 </body>
 </html>

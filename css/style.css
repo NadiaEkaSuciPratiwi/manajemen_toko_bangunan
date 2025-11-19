@@ -29,13 +29,14 @@ body{
 
 .sidebar ul li{
     margin: 8px 0;
+    margin-left: 10px;
 }
 
 .sidebar ul li a{
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 12px;
+    padding: 8px 10px;
     display: block;
     transition: backround-color 0.3s;
     border-radius: 8px;
@@ -49,6 +50,13 @@ body{
     background-color: #295c8a !important;
 }
 
+.sidebar i {
+    margin-right: 10px;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+
 .logo{
     display: block;
     width: 100px;
@@ -59,7 +67,7 @@ body{
 }
 
 .footer{
-    background: linear-gradient(120deg, #0b3557, #4478a3, #384c5c);
+    background: linear-gradient(120deg, #1c7ece, #4478a3, #384c5c);
     color: #fff;
     text-align: center;
     padding: 15px 0px;

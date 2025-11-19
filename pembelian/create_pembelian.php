@@ -159,7 +159,6 @@ if(!isset($_SESSION['user_id'])){
     </div>
 </div>
 
-    <?php include '../include/footer.php'; ?>
 
 </body>
 </html>

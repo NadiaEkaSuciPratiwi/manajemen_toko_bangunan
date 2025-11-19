@@ -11,13 +11,14 @@
     
     <link rel="stylesheet" href="../css/barang.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <?php include '../include/sidebar.php'; ?>
 
     <div class="navbar">
         <div class="navbar_left">
-            <h3>Karyawan</h3>
+            
         </div>
         <div class="navbar-right">
             <span>Hello, <?php echo $_SESSION['username']; ?></span>
@@ -56,7 +57,8 @@
     <form action="" method="GET">
         <input type="text" name="cari" placeholder="Cari karyawan"
                 value="<?php echo isset($_GET['cari']) ? $_GET['cari'] : ''; ?>">
-    <button type="submit">Search</button>
+    <button type="submit"><i class="fa fa-search"></i>Search</button>
+    <a href="karyawan.php" style="padding: 7px;" class="btn-reset"><i class="fa fa-refresh"></i>Reset</a>
     </form>
     </div>
 

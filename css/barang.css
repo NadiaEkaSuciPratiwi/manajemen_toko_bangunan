@@ -48,13 +48,14 @@ body {
 
 /* === FOTO PROFIL === */
 .profile-photo {
-    width: 50px;           /* lebih besar */
-    height: 50px;          /* lebih besar */
-    border-radius: 50%;    /* bulat sempurna */
+    width: 40px;           
+    height: 40px;          
+    border-radius: 50%;    
     object-fit: cover;
     cursor: pointer;
     border: 2px solid #ddd;
     transition: 0.2s;
+    margin-top: 5px;
 }
 
 .profile-photo:hover {
@@ -114,13 +115,24 @@ body {
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
     margin-top: 20px;
-
+    border-radius: 16px;
+    border-spacing: 0;
+    
+    overflow: hidden;
 }
 
+
+table tr:hover {
+    background-color: #d5e2ef;  
+    box-shadow: 0 3px 8px rgba(113, 121, 177, 0.2);
+    transform: scale(1.01);
+}
+
+
 th, td{
-    border: 1px solid #333;
+    
     padding: 10px;
     text-align: center;
 
@@ -131,8 +143,8 @@ th {
     color: #fff;
 }
 
-td{
-    background-color: #eeeeee;
+tr{
+    background-color: #e4e6e8;
 }
 
 img {
@@ -142,14 +154,15 @@ img {
 
 .tambah-btn{
     display: inline-block;
-    padding: 8px 16px;
+    padding: 8px 14px;
     font-weight: 500;
     background-color: #ecc648;
     color: #333;
     text-decoration: none;
     border-radius: 10px;
     transition: 0.3s;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    margin-top: 5px;
 }
 
 .tambah-btn:hover{
@@ -180,23 +193,40 @@ img {
     min-width: 90vh;
 }
 
+
+.content h2{
+    display: inline-block;
+    background-color: #fff;
+    justify-content: flex-start;
+    padding: 18px 16px;
+    border-radius: 20px;
+    display: flex;
+    color: #154d71;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 10px rgba(15, 55, 232, 0.2);
+}
+
 .search-box {
-    width: 30%;
+    width: 40%;          
     display: flex;
     gap: 10px;
+    align-items: center; 
     margin-bottom: 10px;
-    margin-top: 30px;
-    text-align: right;
     float: right;
     justify-content: flex-end;
     margin-top: 70px;
-    position: relative;
+}
+
+.search-box i {
+    font-size: 16px;
+    margin-right: 3px;
 }
 
 .search-box input,
 .search-box select {
     flex: 1;
-    padding: 8px !important;
+    padding: 9px !important;
     border-radius: 6px !important;
     border: 1px solid #777 !important;
 }
@@ -209,7 +239,7 @@ img {
 }
 
 .search-box button {
-    padding: 8px 16px;
+    padding: 8px 12px;
     border: none;
     background: #ecc648;
     color: #333;
@@ -230,10 +260,15 @@ img {
     margin-bottom: 15px;
 }
 
+.filter-barang i{
+    font-size: 14px;
+    margin-right: 3px;
+}
+
 .filter-barang select,
 .filter-barang input {
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 10px 14px;
+    border-radius: 10px;
     border: 1px solid #ccc;
 }
 
@@ -245,7 +280,7 @@ img {
 }
 
 .filter-barang button{
-    padding: 8px 16px;
+    padding: 10px 16px;
     background: #ecc648;
     border: none;
     font-weight: 600;
@@ -308,11 +343,11 @@ img {
   text-decoration: none;
 }
 
-/* === Tombol Tampilkan === */
+/* Tombol Tampilkan */
 button,
 input[type="submit"] {
-    background-color: #ffc107; /* warna kuning seperti tombol login */
-    color: #000;
+    background-color: #ffc107; 
+    color: #fff;
     border: none;
     padding: 8px 12px;
     border-radius: 6px;
@@ -323,24 +358,138 @@ input[type="submit"] {
 
 button:hover,
 input[type="submit"]:hover {
-    background-color: #e0a800; /* sedikit lebih gelap saat hover */
+    background-color: #e0a800; 
 }
 
-/* === Link Unduh Laporan === */
 a.unduh {
     display: inline-block;
-    background-color: #007bff; /* biru agar kontras */
+    background-color: #30b673; 
     color: #fff;
     text-decoration: none;
     padding: 8px 12px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 500;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     margin-top: 20px;
+    float: right;
+    margin-right: 10px;
     transition: background-color 0.3s ease;
 }
 
 a.unduh:hover {
-    background-color: #0056b3;
+    background-color: #0d9757;
+}
+
+a.unduh i{
+    margin-right: 4px;
+    font-size: 18px;
+}
+
+.total-box {
+    margin-top: 10px;
+}
+
+.btn-reset {
+    background: #1c6ea4;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-left: 6px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.btn-reset:hover {
+    background: #154d71;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-box i{
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.filter-box input[type="date"] {
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 14px;
+    font-family: Poppins, sans-serif;
+    transition: all 0.2s ease;
+}
+
+.filter-box input[type="date"]:focus {
+    border-color: #f9c300;
+    background-color: #f9f9f9;
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 61, 89, 0.4);
+}
+
+/* Container utama: filter kiri, search kanan */
+.filter-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0 25px 0;
+    flex-wrap: wrap;
+}
+
+/* Filter tanggal */
+.filter-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.filter-box input[type="date"] {
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+
+/* Search box */
+.search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    color: #000;
+}
+
+.search input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+.search input:focus {
+    border-color: #f9c300 !important;
+    outline: none !important;
+    box-shadow: 0 0 6px rgba(249,195,0,0.4) !important;
+}
+
+.search-btn {
+    background-color: #f4c430;
+    border: none;
+    padding: 9px 15px;
+    border-radius: 6px;
+    color: #333;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.search-btn:hover {
+    background-color: #e0b020;
 }
 

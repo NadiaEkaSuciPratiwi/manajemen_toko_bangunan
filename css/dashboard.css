@@ -41,8 +41,8 @@ body {
 
 /* === FOTO PROFIL === */
 .profile-photo {
-    width: 50px;           /* lebih besar */
-    height: 50px;          /* lebih besar */
+    width: 40px;           /* lebih besar */
+    height: 40px;          /* lebih besar */
     border-radius: 50%;    /* bulat sempurna */
     object-fit: cover;
     cursor: pointer;
@@ -126,13 +126,14 @@ body {
 
 .card{
     background-color: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex: 1;
-    min-width: 250px;
+    min-width: 200px;
     text-align: center;
     transition: transform 0.3s;
+    margin-bottom: 20px;
 }
 
 .card.karyawan{
@@ -146,28 +147,90 @@ body {
 .card.stok{
     border-left: 8px solid #ffc107;
 }
+.card.masuk{
+    border-left: 8px solid #ca1e1e;
+}
 
 .card.karyawan:hover{
     transform: translateY(-5px);
+    background-color: #b3d1f1;
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.20);
 }
 
 .card.penjualan:hover{
     transform: translateY(-5px);
+    background-color: #b0ffc3;
     box-shadow: 0 4px 10px rgba(40, 167, 69, 0.20);
 }
 
 .card.stok:hover{
     transform: translateY(-5px);
+    background-color: #f8e19a;
     box-shadow: 0 4px 10px rgba(255, 193, 7, 0.20);
+}
+
+.card.masuk:hover{
+    transform: translateY(-5px);
+    background-color: #fcc8c8;
+    box-shadow: 0 4px 10px rgba(255, 62, 3, 0.2);
 }
 
 .card h3 {
     color: #295c8a;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
 .card p {
     font-size: 24px;
     font-weight: bold;
     margin: 10px 0 0;
+}
+
+.card i {
+    margin-top: 10px;
+    font-size: 30px;
+    opacity: 0.6;
+}
+
+.karyawan i {
+    color: #007bff;
+}
+
+.penjualan i {
+    color: #28a745;
+}
+
+.stok i {
+    color: #ffc107;
+}
+
+.masuk i {
+    color: #ca1e1e;
+}
+
+.chart-container h3 i{
+    font-size: 30px;
+    color: #11456f;
+}
+
+.chart-container {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr; 
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.chart-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.chart-card h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #0b3557;
+    text-align: center;
 }

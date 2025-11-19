@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="../css/barang.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <body>
@@ -18,7 +19,7 @@
 
     <div class="navbar">
         <div class="navbar_left">
-            <h3>Barang</h3>
+            
         </div>
         <div class="navbar-right">
             <span>Hello, <?php echo $_SESSION['username']; ?></span>
@@ -49,8 +50,7 @@
     </div>
 
 <div class="content">
-    <h2>Data Barang</h2>
-
+<h2>Data Barang</h2>
     <?php if($_SESSION['peran'] == "admin"){ ?>
     <li> <a href="create_barang.php" class="tambah-btn">+ Tambah Barang</a><br></li>
     <?php } ?>
@@ -73,7 +73,8 @@
         <?php } ?>
     </select>
 
-    <button type="submit">Filter</button>
+    <button type="submit"><i class="fa fa-filter"></i>Filter</button>
+    <a href="barang.php" style="padding: 7.5px 13px;" class="btn-reset"><i class="fa fa-refresh"></i>Reset</a>
     </form>
     </div>
 

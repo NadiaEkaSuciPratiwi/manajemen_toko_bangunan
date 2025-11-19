@@ -25,7 +25,7 @@ if(!isset($_SESSION['user_id'])){
         : "";
 
 //  Pagination
-$limit = 2; // jumlah data per halaman
+$limit = 10; 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start = ($page - 1) * $limit;
 

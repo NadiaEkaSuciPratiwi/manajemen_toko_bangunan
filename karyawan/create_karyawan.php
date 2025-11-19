@@ -141,6 +141,5 @@ $id_user_terpilih = isset($_GET['id_user_baru']) ? $_GET['id_user_baru'] : '';
 </div>
 </div>
 
-<?php include '../include/footer.php'; ?>
 </body>
 </html>

@@ -41,8 +41,8 @@ body {
 
 /* === FOTO PROFIL === */
 .profile-photo {
-    width: 50px;           /* lebih besar */
-    height: 50px;          /* lebih besar */
+    width: 40px;           /* lebih besar */
+    height: 40px;          /* lebih besar */
     border-radius: 50%;    /* bulat sempurna */
     object-fit: cover;
     cursor: pointer;

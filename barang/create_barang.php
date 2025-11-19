@@ -118,8 +118,7 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1");
     </form>
     </div>
     </div>
-    
-    <?php include '../include/footer.php'; ?>
+
 
 </body>
 </html>

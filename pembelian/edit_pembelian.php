@@ -140,7 +140,6 @@ $supplier = mysqli_query($koneksi, "SELECT * FROM supplier");
 
 </div>
 </div>
-<?php include '../include/footer.php'; ?>
 
 </body>
 </html>

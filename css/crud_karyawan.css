@@ -46,8 +46,8 @@ body {
 
 /* === FOTO PROFIL === */
 .profile-photo {
-    width: 50px;           /* lebih besar */
-    height: 50px;          /* lebih besar */
+    width: 40px;           /* lebih besar */
+    height: 40px;          /* lebih besar */
     border-radius: 50%;    /* bulat sempurna */
     object-fit: cover;
     cursor: pointer;
@@ -263,7 +263,7 @@ input[type="file"]:focus{
     width: 600px;
     max-width: 700px;
     margin: 50px auto;
-    background: #fff;
+    background: #c7dbf0;
     padding: 25px 30px;
     border-radius: 15px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);

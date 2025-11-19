@@ -135,7 +135,6 @@ $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori1 ORDER BY nama_k
     </div>
     </div>
 
-    <?php include '../include/footer.php'; ?>
 
 </body>
 </html>

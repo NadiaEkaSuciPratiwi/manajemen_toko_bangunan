@@ -176,7 +176,6 @@ if($error != ""){
     </script>
     </div>
     </div>
-    <?php include '../include/footer.php'; ?>
     
 </body>
 </html>

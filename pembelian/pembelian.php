@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="../css/barang.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <body>
@@ -18,7 +19,7 @@
 
     <div class="navbar">
         <div class="navbar_left">
-            <h3>Pembelian</h3>
+            
         </div>
         <div class="navbar-right">
             <span>Hello, <?php echo $_SESSION['username']; ?></span>
@@ -50,16 +51,31 @@
 
     <div class="content">
     <h2>Data Pembelian</h2>
-
     <a href="create_pembelian.php" class="tambah-btn">+ Tambah Pembelian</a>
 
-    <div class="search-box">
-    <form action="" method="GET">
-        <input type="text" name="cari" placeholder="Cari pembelian"
-                value="<?php echo isset($_GET['cari']) ? $_GET['cari'] : ''; ?>">
-    <button type="submit">Search</button>
+    <div class="filter-search-container">
+
+    <!-- FILTER TANGGAL -->
+    <form method="GET" class="filter-box">
+        <label>Dari:</label>
+        <input type="date" name="mulai" value="<?= $_GET['mulai'] ?? '' ?>">
+
+        <label>Sampai:</label>
+        <input type="date" name="sampai" value="<?= $_GET['sampai'] ?? '' ?>">
+
+        <button type="submit" name="filter"><i class="fa fa-filter"></i>Filter</button>
+        <a href="pembelian.php" class="btn-reset"><i class="fa fa-refresh"></i>Reset</a>
     </form>
+
+    <!-- SEARCH -->
+    <form method="GET" class="search">
+        <input type="text" name="cari" placeholder="Cari penjualan"
+               value="<?= $_GET['cari'] ?? '' ?>">
+        <button type="submit" class="search-btn"><i class="fa fa-search"></i> Search</button>
+    </form>
+
     </div>
+
     
     <table>
         <thead>

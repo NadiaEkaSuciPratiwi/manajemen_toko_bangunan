@@ -38,7 +38,7 @@ if (!isset($_SESSION['peran']) || $_SESSION['peran'] !== 'admin') {
 }
 
 //  Pagination
-$limit = 2; // jumlah data per halaman
+$limit = 10; // jumlah data per halaman
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start = ($page - 1) * $limit;
 
